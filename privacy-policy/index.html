@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polityka prywatności - Państwa Miasta</title>
+  <meta name="description" content="Polityka prywatności aplikacji Państwa Miasta.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #f7f7f4;
+      --surface: #ffffff;
+      --text: #1d1d1f;
+      --muted: #5f6368;
+      --accent: #2457c5;
+      --border: #deded8;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #111214;
+        --surface: #1b1c1f;
+        --text: #f5f5f5;
+        --muted: #b8b8b8;
+        --accent: #8ab4ff;
+        --border: #303236;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    article {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: clamp(24px, 5vw, 48px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 6vw, 3.25rem);
+    }
+
+    h2 {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      margin-top: 24px;
+      font-size: 1.15rem;
+    }
+
+    p, li {
+      font-size: 1rem;
+    }
+
+    .lead, .meta {
+      color: var(--muted);
+    }
+
+    .meta {
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    code {
+      padding: 0.1rem 0.3rem;
+      border-radius: 6px;
+      background: color-mix(in srgb, var(--border) 55%, transparent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <h1>Polityka prywatności aplikacji Państwa Miasta</h1>
+      <p class="meta">Data ostatniej aktualizacji: 1 lipca 2026 r.</p>
+      <p class="lead">Ta polityka prywatności opisuje, jakie dane mogą być przetwarzane podczas korzystania z aplikacji <strong>Państwa Miasta</strong> oraz w jakim celu są używane.</p>
+
+      <ul>
+        <li>Aplikacja: <strong>Państwa Miasta</strong></li>
+        <li>Identyfikator aplikacji Android: <code>app.dihor.panstwamiasta</code></li>
+        <li>Administrator / wydawca: <strong>Paweł Wielga</strong></li>
+        <li>Kontakt w sprawach prywatności: przez dane kontaktowe wydawcy podane w Google Play albo przez publiczny profil GitHub <a href="https://github.com/PawelWielga">PawelWielga</a>.</li>
+      </ul>
+
+      <h2>1. Jak działa aplikacja</h2>
+      <p><strong>Państwa Miasta</strong> to gra słowna na Androida. Podstawowa rozgrywka multiplayer działa lokalnie, w tej samej sieci Wi-Fi albo przez hotspot. Aplikacja nie wymaga konta użytkownika, logowania ani rejestracji.</p>
+      <p>Aplikacja nie posiada własnego systemu kont i nie wysyła danych rozgrywki na backend gry. Dane potrzebne do gry są przetwarzane lokalnie na urządzeniu oraz, w trybie multiplayer, przesyłane między urządzeniami uczestników znajdujących się w tym samym pokoju gry.</p>
+      <p>Aplikacja może korzystać z internetu do wyświetlania reklam, obsługi zgód reklamowych oraz pobrania zdalnej konfiguracji reklam, jeśli reklamy są włączone w danym buildzie.</p>
+
+      <h2>2. Jakie dane mogą być przetwarzane</h2>
+      <p>Aplikacja może przetwarzać następujące dane:</p>
+
+      <h3>Dane podane przez użytkownika</h3>
+      <ul>
+        <li>nazwa gracza albo pseudonim wpisany w aplikacji,</li>
+        <li>odpowiedzi wpisywane w trakcie rundy,</li>
+        <li>decyzje dotyczące oceny odpowiedzi innych graczy,</li>
+        <li>ustawienia aplikacji, na przykład preferencje gry lub dźwięku.</li>
+      </ul>
+      <p>Nie wymagamy podawania imienia i nazwiska, adresu e-mail, numeru telefonu ani innych danych kontaktowych.</p>
+
+      <h3>Dane lokalnej rozgrywki multiplayer</h3>
+      <p>Podczas gry w sieci lokalnej aplikacja może przetwarzać i przesyłać między urządzeniami uczestników:</p>
+      <ul>
+        <li>nazwę gracza,</li>
+        <li>identyfikator gracza używany w bieżącej sesji,</li>
+        <li>kod pokoju,</li>
+        <li>identyfikator pokoju,</li>
+        <li>adres IP i port hosta potrzebne do połączenia lokalnego,</li>
+        <li>stan gry, kategorię, literę, odpowiedzi, oceny i wyniki,</li>
+        <li>informacje techniczne potrzebne do utrzymania połączenia, takie jak heartbeat i status połączenia.</li>
+      </ul>
+      <p>Te dane są używane po to, aby uczestnicy mogli dołączyć do tej samej gry, widzieć wspólny stan rozgrywki i kontynuować grę po chwilowej utracie połączenia.</p>
+
+      <h3>Dane zapisane na urządzeniu</h3>
+      <p>Aplikacja może zapisywać lokalnie na urządzeniu dane potrzebne do działania gry, na przykład nazwę gracza, ustawienia oraz dane aktywnej lub ostatniej sesji. Dane te pozostają na urządzeniu użytkownika i mogą zostać usunięte przez wyczyszczenie danych aplikacji albo odinstalowanie aplikacji.</p>
+
+      <h3>Dane techniczne urządzenia i reklam</h3>
+      <p>Jeżeli reklamy są włączone, aplikacja korzysta z Google Mobile Ads SDK / Google AdMob. W takim przypadku Google i jego partnerzy reklamowi mogą przetwarzać dane techniczne urządzenia i użycia aplikacji, na przykład identyfikator reklamowy urządzenia, adres IP, przybliżoną lokalizację wynikającą z adresu IP, informacje o urządzeniu, informacje o aplikacji oraz interakcje z reklamami.</p>
+      <p>Zakres danych przetwarzanych przez Google zależy od konfiguracji reklam, regionu użytkownika, ustawień prywatności oraz zgód wyrażonych przez użytkownika. Więcej informacji znajduje się w politykach Google:</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+        <li><a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></li>
+      </ul>
+
+      <h2>3. Kamera i skanowanie kodów QR</h2>
+      <p>Aplikacja może poprosić o dostęp do aparatu, gdy użytkownik wybierze dołączanie do pokoju przez zeskanowanie kodu QR.</p>
+      <p>Kamera jest używana wyłącznie do odczytania kodu QR z danymi pokoju gry, takimi jak adres hosta, port i kod pokoju. Aplikacja nie zapisuje zdjęć ani nagrań z aparatu i nie wysyła obrazu z kamery do wydawcy aplikacji.</p>
+      <p>Skanowanie QR jest opcjonalne. Użytkownik może dołączyć do gry ręcznie, wpisując dane pokoju.</p>
+
+      <h2>4. Powiadomienia i działanie gry w tle</h2>
+      <p>Podczas aktywnej gry multiplayer aplikacja może uruchomić usługę działającą w tle jako Android Foreground Service. Służy ona do utrzymania lokalnego pokoju gry i połączenia między urządzeniami, gdy aplikacja zostanie zminimalizowana.</p>
+      <p>W takim przypadku system Android pokazuje stałe powiadomienie dotyczące aktywnej gry. Powiadomienie może zawierać podstawowe informacje o pokoju, hoście, liczbie graczy lub statusie rozgrywki.</p>
+      <p>Usługa działa tylko podczas aktywnej sesji gry i jest zatrzymywana po opuszczeniu pokoju albo zakończeniu aktywnej sesji.</p>
+
+      <h2>5. Reklamy i zgody użytkownika</h2>
+      <p>Aplikacja może wyświetlać reklamy Google AdMob. Reklamy mogą być personalizowane albo niepersonalizowane, zależnie od regionu, konfiguracji oraz zgód użytkownika.</p>
+      <p>Aplikacja może używać Google User Messaging Platform, aby wyświetlić formularz zgody lub opcje prywatności wymagane dla reklam. Użytkownik może zobaczyć komunikat dotyczący prywatności przed załadowaniem reklam albo w innym momencie wymaganym przez konfigurację Google.</p>
+      <p>Jeżeli użytkownik nie wyrazi wymaganej zgody albo zgoda nie jest dostępna, aplikacja może nie ładować reklam lub wyświetlać reklamy w ograniczonym zakresie, zależnie od konfiguracji Google i aplikacji.</p>
+
+      <h2>6. Zdalna konfiguracja reklam</h2>
+      <p>Aplikacja może pobrać z publicznego adresu HTTPS konfigurację reklam, na przykład informację, czy reklamy są włączone oraz jaki identyfikator jednostki reklamowej ma zostać użyty.</p>
+      <p>Taka konfiguracja nie wymaga konta użytkownika. Podczas pobierania konfiguracji serwer obsługujący ten adres może otrzymać standardowe dane techniczne połączenia, takie jak adres IP, czas żądania i informacje o kliencie HTTP. Dane te mogą pojawić się w logach technicznych serwera zgodnie z konfiguracją hostingu używanego przez wydawcę.</p>
+
+      <h2>7. Komu mogą być udostępniane dane</h2>
+      <p>Dane rozgrywki multiplayer są udostępniane uczestnikom tego samego pokoju gry w lokalnej sieci. Przykładowo inni gracze mogą widzieć nazwę gracza, odpowiedzi, oceny i wyniki.</p>
+      <p>Dane techniczne i reklamowe mogą być przetwarzane przez Google i jego partnerów reklamowych, jeżeli reklamy są włączone. Szczegóły opisują polityki Google wskazane wyżej.</p>
+      <p>Nie sprzedajemy danych osobowych użytkowników.</p>
+
+      <h2>8. Uprawnienia Androida używane przez aplikację</h2>
+      <p>Aplikacja może korzystać z następujących uprawnień Androida:</p>
+      <ul>
+        <li><code>INTERNET</code> - do komunikacji sieciowej, w tym połączeń lokalnych multiplayer, reklam oraz pobrania konfiguracji reklam,</li>
+        <li><code>ACCESS_NETWORK_STATE</code> - do sprawdzenia stanu połączenia sieciowego,</li>
+        <li><code>CAMERA</code> - do opcjonalnego skanowania kodu QR pokoju,</li>
+        <li><code>POST_NOTIFICATIONS</code> - do pokazania powiadomienia aktywnej gry na Androidzie 13 i nowszych,</li>
+        <li><code>FOREGROUND_SERVICE</code> oraz <code>FOREGROUND_SERVICE_DATA_SYNC</code> - do utrzymania aktywnej gry multiplayer podczas działania aplikacji w tle.</li>
+      </ul>
+
+      <h2>9. Jak długo przechowujemy dane</h2>
+      <p>Dane zapisane lokalnie w aplikacji są przechowywane tak długo, jak jest to potrzebne do działania aplikacji albo do czasu ich usunięcia przez użytkownika, na przykład przez wyczyszczenie danych aplikacji lub odinstalowanie aplikacji.</p>
+      <p>Dane aktywnej gry są używane w czasie trwania sesji. Po opuszczeniu pokoju albo zakończeniu gry aplikacja nie potrzebuje ich do dalszego działania, z wyjątkiem danych, które mogą zostać zapisane lokalnie jako ustawienia lub dane ułatwiające ponowne połączenie z aktywną sesją.</p>
+      <p>Dane przetwarzane przez Google w ramach reklam są przechowywane zgodnie z politykami i ustawieniami Google.</p>
+
+      <h2>10. Bezpieczeństwo</h2>
+      <p>Aplikacja ogranicza przetwarzanie danych do funkcji potrzebnych do gry, lokalnej komunikacji multiplayer, reklam i podstawowej konfiguracji. Dane lokalnej rozgrywki są przesyłane między urządzeniami w tej samej sieci lokalnej.</p>
+      <p>Połączenia w lokalnej sieci LAN/hotspot mogą nie korzystać z szyfrowania TLS, ponieważ służą bezpośredniej komunikacji między urządzeniami graczy w tej samej sieci. Nie należy używać gry w niezaufanych sieciach, jeśli użytkownik nie chce ujawniać nazwy gracza, odpowiedzi lub danych pokoju innym osobom mającym dostęp do tej sieci.</p>
+      <p>Połączenia do zdalnej konfiguracji reklam powinny używać HTTPS.</p>
+
+      <h2>11. Dzieci i rodziny</h2>
+      <p>Aplikacja jest prostą grą słowną, która może być używana przez graczy w różnym wieku. Nie prosimy użytkowników o podawanie danych kontaktowych ani danych identyfikujących.</p>
+      <p>Jeżeli aplikacja jest publikowana jako skierowana do dzieci lub rodzin, wydawca powinien skonfigurować Google Play Console, AdMob oraz reklamy zgodnie z faktyczną grupą odbiorców i obowiązującymi wymaganiami Google Play.</p>
+      <p>Rodzic lub opiekun może skontaktować się z wydawcą przez dane kontaktowe podane w tej polityce, jeśli uważa, że dziecko przekazało dane, które powinny zostać usunięte.</p>
+
+      <h2>12. Prawa użytkownika</h2>
+      <p>W zależności od miejsca zamieszkania użytkownik może mieć prawo do uzyskania informacji o przetwarzaniu danych, dostępu do danych, sprostowania danych, usunięcia danych, ograniczenia przetwarzania albo sprzeciwu wobec przetwarzania.</p>
+      <p>W sprawach dotyczących prywatności można skontaktować się z wydawcą przez dane kontaktowe podane w Google Play albo przez publiczny profil GitHub <a href="https://github.com/PawelWielga">PawelWielga</a>.</p>
+      <p>Dane zapisane lokalnie w aplikacji można usunąć przez wyczyszczenie danych aplikacji w ustawieniach Androida albo przez odinstalowanie aplikacji.</p>
+
+      <h2>13. Zmiany polityki prywatności</h2>
+      <p>Polityka prywatności może być aktualizowana, gdy zmieni się działanie aplikacji, zakres przetwarzanych danych, konfiguracja reklam albo wymagania prawne. Aktualna wersja polityki powinna być dostępna publicznie pod linkiem podanym w Google Play Console.</p>
+    </article>
+  </main>
+</body>
+</html>
