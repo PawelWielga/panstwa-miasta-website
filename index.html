@@ -3,76 +3,448 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=privacy-policy/">
-  <title>Państwa Miasta - polityka prywatności</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --background: #f7f7f4;
-      --surface: #ffffff;
-      --text: #1d1d1f;
-      --muted: #5f6368;
-      --accent: #2457c5;
-      --border: #deded8;
-    }
+  <title>Państwa Miasta na Androida | Gra bez kartek</title>
+  <meta name="description" content="Nowoczesna gra Państwa Miasta na Androida. Graj lokalnie przez Wi-Fi lub hotspot, bez konta, kartek i ręcznego liczenia punktów.">
+  <meta name="theme-color" content="#1565c0">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://panstwamiasta.dihor.pl/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #111214;
-        --surface: #1b1c1f;
-        --text: #f5f5f5;
-        --muted: #b8b8b8;
-        --accent: #8ab4ff;
-        --border: #303236;
-      }
-    }
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="Państwa Miasta">
+  <meta property="og:title" content="Państwa Miasta bez kartek i liczenia punktów">
+  <meta property="og:description" content="Lokalna gra wieloosobowa na Androida. Połączcie telefony przez Wi-Fi lub hotspot i grajcie bez konta.">
+  <meta property="og:url" content="https://panstwamiasta.dihor.pl/">
+  <meta property="og:image" content="https://panstwamiasta.dihor.pl/assets/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo Państwa Miasta i hasło: bez kartek, bez liczenia punktów">
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.6;
-    }
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Państwa Miasta bez kartek i liczenia punktów">
+  <meta name="twitter:description" content="Nowoczesna wersja klasycznej gry słownej na telefony z Androidem.">
+  <meta name="twitter:image" content="https://panstwamiasta.dihor.pl/assets/og-image.svg">
 
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 20px;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Państwa Miasta",
+    "description": "Gra słowna na Androida z lokalnym trybem wieloosobowym przez Wi-Fi lub hotspot.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Android 6.0 lub nowszy",
+    "url": "https://panstwamiasta.dihor.pl/",
+    "author": {
+      "@type": "Person",
+      "name": "Paweł Wielga"
     }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-    }
-
-    h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 6vw, 3rem);
-      line-height: 1.1;
-    }
-
-    p {
-      margin: 0 0 18px;
-      color: var(--muted);
-    }
-
-    a {
-      color: var(--accent);
-      font-weight: 650;
-    }
-  </style>
+  }
+  </script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <main>
-    <section class="card">
-      <h1>Państwa Miasta</h1>
-      <p>Przekierowujemy do polityki prywatności aplikacji.</p>
-      <p><a href="privacy-policy/">Otwórz politykę prywatności</a></p>
+  <a class="skip-link" href="#main-content">Przejdź do treści</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Państwa Miasta, strona główna">
+        <img src="assets/logo-mark.svg" width="44" height="44" alt="">
+        <span>Państwa Miasta</span>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>
+        <span class="visually-hidden">Otwórz menu</span>
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="site-navigation" aria-label="Główna nawigacja" data-navigation>
+        <a href="#zalety">Dlaczego warto</a>
+        <a href="#jak-to-dziala">Jak to działa</a>
+        <a href="#widoki">Widoki gry</a>
+        <a href="#faq">FAQ</a>
+        <span class="button button--small button--disabled" aria-disabled="true" title="Karta aplikacji w Google Play nie jest jeszcze aktywna">
+          Wkrótce w Google Play
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span>
+            Gra słowna na Androida
+          </p>
+          <h1 id="hero-title">Państwa Miasta.<br><span>Bez kartek i liczenia punktów.</span></h1>
+          <p class="hero-lead">Jedna osoba tworzy pokój, pozostali dołączają przez tę samą sieć Wi-Fi lub hotspot. Aplikacja prowadzi rundę, zbiera odpowiedzi i sama podlicza wyniki.</p>
+          <div class="hero-actions">
+            <span class="button button--primary button--disabled" aria-disabled="true" title="Karta aplikacji w Google Play nie jest jeszcze aktywna">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path d="M3.5 3.2v17.6l10.8-8.8L3.5 3.2Zm12 9.8-2.3 1.9 2.8 2.3 3.2-1.8c1.1-.6 1.1-1.7 0-2.3l-3.7-2.1v2Zm.5-6.2-2.8 2.3 2.3 1.9 3.7-2.1c1.1-.6 1.1-1.7 0-2.3L16 4.8v2Z" fill="currentColor"/>
+              </svg>
+              Wkrótce w Google Play
+            </span>
+            <a class="button button--secondary" href="#jak-to-dziala">Zobacz, jak gramy</a>
+          </div>
+          <ul class="hero-facts" aria-label="Najważniejsze informacje">
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Bez konta
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12a10 10 0 0 1 14 0M8 15a6 6 0 0 1 8 0m-5 3a2 2 0 0 1 2 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Wi-Fi lub hotspot
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 3h10v18H7zM9 6h6M10 18h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Android 6.0+
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-label="Schematyczny podgląd ekranu startowego aplikacji">
+          <div class="letter-tile letter-tile--one" aria-hidden="true">P</div>
+          <div class="letter-tile letter-tile--two" aria-hidden="true">M</div>
+          <div class="letter-tile letter-tile--three" aria-hidden="true">A</div>
+          <div class="phone phone--hero">
+            <div class="phone-speaker" aria-hidden="true"></div>
+            <div class="phone-screen app-home-screen">
+              <img class="app-logo" src="assets/logo-mark.svg" width="92" height="92" alt="">
+              <p class="app-title">Państwa Miasta</p>
+              <p class="app-greeting">Cześć, Gracz!</p>
+              <p class="app-caption">Stwórz grę, zaproś znajomych do pokoju i od razu grajcie.</p>
+              <div class="app-button app-button--primary">
+                <span aria-hidden="true">＋</span> Stwórz grę
+              </div>
+              <div class="app-button app-button--primary">
+                <span aria-hidden="true">↪</span> Dołącz do gry
+              </div>
+              <div class="app-links"><span>Instrukcja</span><span>Opcje</span></div>
+              <div class="app-footer"><span>DIHOR</span><span>Android</span></div>
+            </div>
+          </div>
+          <div class="visual-note">
+            <strong>Gracie razem, lokalnie</strong>
+            <span>Telefony komunikują się bezpośrednio w tej samej sieci.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Najważniejsze cechy">
+      <div class="container trust-grid">
+        <div><strong>2–12</strong><span>graczy w pokoju</span></div>
+        <div><strong>0</strong><span>wymaganych kont</span></div>
+        <div><strong>1</strong><span>wspólna sieć</span></div>
+        <div><strong>100%</strong><span>automatycznej punktacji</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="zalety" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Mniej przygotowań, więcej grania</p>
+          <h2 id="benefits-title">Klasyczne zasady w wygodnej formie</h2>
+          <p>Nie szukacie kartek, długopisów ani kalkulatora. Każdy wpisuje odpowiedzi na swoim telefonie, a aplikacja pilnuje przebiegu gry.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Bez kartek</h3>
+            <p>Odpowiedzi wpisujecie bezpośrednio w aplikacji. Niczego nie trzeba drukować ani przygotowywać.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="icon-box icon-box--yellow" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Punkty liczą się same</h3>
+            <p>Po ocenie odpowiedzi wyniki i ranking aktualizują się automatycznie, bez sporów o rachunki.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="icon-box icon-box--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 13a4 4 0 1 1 0-8m8 8a4 4 0 1 0 0-8M2 21a6 6 0 0 1 12 0m-4 0a6 6 0 0 1 12 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Lokalny multiplayer</h3>
+            <p>Jeden telefon jest gospodarzem, a pozostałe dołączają do wspólnego pokoju w lokalnej sieci.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="icon-box icon-box--purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16M6.3 6.3l11.4 11.4M17.7 6.3 6.3 17.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Wi-Fi albo hotspot</h3>
+            <p>Możecie użyć domowej sieci lub hotspotu utworzonego przez jednego z graczy. Internet nie jest potrzebny do samej rozgrywki.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="icon-box icon-box--orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3a5 5 0 0 1 5 5v3h2v10H5V11h2V8a5 5 0 0 1 5-5Zm-3 8h6V8a3 3 0 0 0-6 0v3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Bez rejestracji</h3>
+            <p>Podajesz tylko nazwę widoczną w pokoju. Nie tworzysz konta, nie ustawiasz hasła i nie logujesz się.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="icon-box icon-box--red" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M5.6 5.6l2.8 2.8m7.2 7.2 2.8 2.8m0-12.8-2.8 2.8m-7.2 7.2-2.8 2.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Prosta obsługa</h3>
+            <p>Duże przyciski, czytelne komunikaty i prowadzenie krok po kroku ułatwiają grę osobom w różnym wieku.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tinted" id="jak-to-dziala" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow">Od pokoju do rankingu</p>
+          <h2 id="steps-title">Jak zacząć grę?</h2>
+          <p>Wystarczy kilka telefonów z Androidem połączonych z tą samą siecią.</p>
+        </div>
+
+        <ol class="steps-grid">
+          <li class="step-card">
+            <span class="step-number">1</span>
+            <h3>Utwórz pokój</h3>
+            <p>Jedna osoba wybiera „Stwórz grę” i ustawia liczbę rund, czas oraz limit graczy.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-number">2</span>
+            <h3>Dołączcie</h3>
+            <p>Pozostali wybierają znaleziony pokój. W razie potrzeby mogą użyć QR lub danych wpisanych ręcznie.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-number">3</span>
+            <h3>Wylosujcie literę</h3>
+            <p>Po starcie rundy aplikacja wybiera literę wspólną dla wszystkich uczestników.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-number">4</span>
+            <h3>Wpiszcie odpowiedzi</h3>
+            <p>Każdy uzupełnia kategorie na swoim telefonie przed końcem ustalonego czasu.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-number">5</span>
+            <h3>Oceńcie odpowiedzi</h3>
+            <p>Gracze wspólnie akceptują odpowiedzi i rozstrzygają wątpliwe propozycje.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-number">6</span>
+            <h3>Zobaczcie wyniki</h3>
+            <p>Aplikacja oblicza punkty, aktualizuje ranking i prowadzi do kolejnej rundy.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="widoki" aria-labelledby="screens-title">
+      <div class="container">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="eyebrow">Aktualny przebieg aplikacji</p>
+            <h2 id="screens-title">Najważniejsze widoki gry</h2>
+          </div>
+          <p class="mockup-disclaimer"><strong>Schematyczne makiety.</strong> Pokazują potwierdzony układ i funkcje aplikacji. Finalne zrzuty ekranu pojawią się po publikacji wersji sklepowej.</p>
+        </div>
+
+        <div class="screens-grid">
+          <figure class="screen-card">
+            <div class="phone phone--small">
+              <div class="phone-speaker" aria-hidden="true"></div>
+              <div class="phone-screen app-home-screen app-home-screen--small">
+                <img class="app-logo" src="assets/logo-mark.svg" width="72" height="72" alt="">
+                <p class="app-title">Państwa Miasta</p>
+                <p class="app-greeting">Cześć, Gracz!</p>
+                <div class="app-button app-button--primary">＋ Stwórz grę</div>
+                <div class="app-button app-button--primary">↪ Dołącz do gry</div>
+                <div class="app-links"><span>Instrukcja</span><span>Opcje</span></div>
+              </div>
+            </div>
+            <figcaption><strong>Ekran startowy</strong><span>Tworzenie lub dołączanie do gry.</span></figcaption>
+          </figure>
+
+          <figure class="screen-card">
+            <div class="phone phone--small">
+              <div class="phone-speaker" aria-hidden="true"></div>
+              <div class="phone-screen lobby-screen">
+                <div class="mini-topbar"><span>←</span><strong>Pokój gry</strong><span>⋮</span></div>
+                <div class="room-code"><span>Kod pokoju</span><strong>482 731</strong></div>
+                <div class="mini-card">
+                  <div class="mini-row"><strong>Gracze</strong><span>4 / 8</span></div>
+                  <div class="player-row"><span class="avatar">P</span><span>Paweł</span><small>Host</small></div>
+                  <div class="player-row"><span class="avatar avatar--yellow">A</span><span>Ania</span><small>Gotowa</small></div>
+                  <div class="player-row"><span class="avatar avatar--green">K</span><span>Kuba</span><small>Gotowy</small></div>
+                  <div class="player-row"><span class="avatar avatar--purple">M</span><span>Maria</span><small>Gotowa</small></div>
+                </div>
+                <div class="app-button app-button--primary">Rozpocznij grę</div>
+              </div>
+            </div>
+            <figcaption><strong>Lobby</strong><span>Lista graczy i ustawienia pokoju.</span></figcaption>
+          </figure>
+
+          <figure class="screen-card">
+            <div class="phone phone--small">
+              <div class="phone-speaker" aria-hidden="true"></div>
+              <div class="phone-screen round-screen">
+                <div class="round-header"><span>Runda 2/5</span><strong>01:12</strong></div>
+                <div class="round-letter"><span>Litera</span><strong>P</strong></div>
+                <label class="answer-field"><span>Państwo</span><b>Polska</b></label>
+                <label class="answer-field"><span>Miasto</span><b>Poznań</b></label>
+                <label class="answer-field"><span>Rzecz</span><b>Plecak</b></label>
+                <label class="answer-field"><span>Zwierzę</span><b>Panda</b></label>
+                <div class="app-button app-button--primary">Gotowe</div>
+              </div>
+            </div>
+            <figcaption><strong>Runda</strong><span>Litera, czas i pola odpowiedzi.</span></figcaption>
+          </figure>
+
+          <figure class="screen-card">
+            <div class="phone phone--small">
+              <div class="phone-speaker" aria-hidden="true"></div>
+              <div class="phone-screen results-screen">
+                <div class="mini-topbar"><span></span><strong>Wyniki</strong><span></span></div>
+                <div class="podium">
+                  <div class="podium-place podium-place--second"><span>A</span><b>42</b><small>Ania</small></div>
+                  <div class="podium-place podium-place--first"><span>P</span><b>51</b><small>Paweł</small></div>
+                  <div class="podium-place podium-place--third"><span>K</span><b>35</b><small>Kuba</small></div>
+                </div>
+                <div class="mini-card score-list">
+                  <div><span>1. Paweł</span><b>51 pkt</b></div>
+                  <div><span>2. Ania</span><b>42 pkt</b></div>
+                  <div><span>3. Kuba</span><b>35 pkt</b></div>
+                  <div><span>4. Maria</span><b>29 pkt</b></div>
+                </div>
+                <div class="app-button app-button--primary">Kolejna runda</div>
+              </div>
+            </div>
+            <figcaption><strong>Wyniki</strong><span>Automatyczna punktacja i ranking.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--audience" aria-labelledby="audience-title">
+      <div class="container audience-layout">
+        <div class="section-heading">
+          <p class="eyebrow">Dla różnych pokoleń</p>
+          <h2 id="audience-title">Gra, którą łatwo zabrać ze sobą</h2>
+          <p>W domu, na wyjeździe albo podczas spotkania. Potrzebujecie tylko telefonów i wspólnej sieci.</p>
+        </div>
+        <div class="audience-grid">
+          <article><span aria-hidden="true">🏠</span><h3>Rodzinne spotkania</h3><p>Proste zasady i czytelny interfejs pomagają szybko włączyć do gry dzieci, dorosłych i seniorów.</p></article>
+          <article><span aria-hidden="true">🎉</span><h3>Wieczór ze znajomymi</h3><p>Krótka konfiguracja i wspólne ocenianie odpowiedzi dobrze pasują do luźnej zabawy w grupie.</p></article>
+          <article><span aria-hidden="true">🚆</span><h3>Podróż i wyjazd</h3><p>Hotspot jednego telefonu wystarczy, żeby stworzyć lokalną sieć nawet bez domowego Wi-Fi.</p></article>
+          <article><span aria-hidden="true">👨‍👩‍👧‍👦</span><h3>Różne grupy wiekowe</h3><p>Duże elementy, spokojny układ i brak technicznego żargonu ułatwiają wspólną rozgrywkę.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section browser-section" aria-labelledby="browser-title">
+      <div class="container browser-card">
+        <div class="browser-copy">
+          <p class="eyebrow eyebrow--light">W planach</p>
+          <h2 id="browser-title">Dołączanie przez przeglądarkę</h2>
+          <p>Pracujemy nad klientem WWW, dzięki któremu do lokalnej gry będzie można dołączyć bez instalowania aplikacji. To rozwiązanie ma pomóc szczególnie osobom korzystającym z iPhone’ów.</p>
+          <div class="coming-address">
+            <span>Docelowy adres</span>
+            <code>play.panstwamiasta.dihor.pl</code>
+          </div>
+          <span class="button button--light button--disabled" aria-disabled="true">Wkrótce</span>
+        </div>
+        <div class="browser-visual" aria-hidden="true">
+          <div class="browser-window">
+            <div class="browser-bar"><i></i><i></i><i></i><span>play.panstwamiasta.dihor.pl</span></div>
+            <div class="browser-content">
+              <img src="assets/logo-mark.svg" width="72" height="72" alt="">
+              <strong>Dołącz do pokoju</strong>
+              <div class="fake-input">Kod pokoju</div>
+              <div class="fake-button">Dołącz</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <div class="section-heading faq-heading">
+          <p class="eyebrow">Najczęstsze pytania</p>
+          <h2 id="faq-title">FAQ</h2>
+          <p>Najważniejsze informacje o obecnej wersji gry na Androida.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Czy gra wymaga internetu?</summary>
+            <p>Nie do samej rozgrywki. Telefony komunikują się lokalnie przez tę samą sieć Wi-Fi albo hotspot. Aplikacja może korzystać z internetu do reklam lub pobrania ich konfiguracji, jeśli reklamy są włączone.</p>
+          </details>
+          <details>
+            <summary>Czy trzeba zakładać konto?</summary>
+            <p>Nie. Wystarczy podać nazwę gracza widoczną dla pozostałych osób w pokoju. Nie ma logowania ani rejestracji.</p>
+          </details>
+          <details>
+            <summary>Czy każdy gracz musi mieć aplikację?</summary>
+            <p>W obecnej wersji tak. Każdy uczestnik dołącza z własnego telefonu z Androidem. Dołączanie przez przeglądarkę jest dopiero w planach.</p>
+          </details>
+          <details>
+            <summary>Czy można grać na iPhonie?</summary>
+            <p>Obecnie nie. Nie ma natywnej aplikacji na iPhone’a. Planowany klient przeglądarkowy ma w przyszłości umożliwić takim graczom dołączanie do pokoju.</p>
+          </details>
+          <details>
+            <summary>Ilu graczy może dołączyć?</summary>
+            <p>Pokój może obsłużyć od 2 do 12 graczy. Domyślne ustawienie to maksymalnie 8 osób.</p>
+          </details>
+          <details>
+            <summary>Czy można użyć hotspotu?</summary>
+            <p>Tak. Jeden z graczy może udostępnić hotspot, a pozostałe telefony łączą się z nim jak ze zwykłą siecią Wi-Fi. Hotspot trzeba włączyć ręcznie w ustawieniach telefonu.</p>
+          </details>
+          <details>
+            <summary>Czy gra jest darmowa?</summary>
+            <p>Aplikacja nie ma jeszcze publicznej karty Google Play, dlatego cena nie jest obecnie potwierdzona. Informacja zostanie uzupełniona przy premierze.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="cta-title">
+      <div class="container final-cta-inner">
+        <img src="assets/logo-mark.svg" width="88" height="88" alt="">
+        <div>
+          <p class="eyebrow">Gotowi na literę?</p>
+          <h2 id="cta-title">Zagrajcie bez kartek i ręcznego liczenia</h2>
+          <p>Aplikacja na Androida pojawi się w Google Play po zakończeniu publikacji.</p>
+        </div>
+        <span class="button button--primary button--disabled" aria-disabled="true">Wkrótce w Google Play</span>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="#top">
+          <img src="assets/logo-mark.svg" width="40" height="40" alt="">
+          <span>Państwa Miasta</span>
+        </a>
+        <p>Nowoczesna wersja klasycznej gry słownej na telefony z Androidem.</p>
+      </div>
+      <nav aria-label="Linki w stopce">
+        <a href="#jak-to-dziala">Jak to działa</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy-policy/">Polityka prywatności</a>
+        <a href="https://github.com/PawelWielga" rel="me">Kontakt</a>
+      </nav>
+      <div class="footer-meta">
+        <p>© <span data-current-year>2026</span> Paweł Wielga</p>
+        <p>Wszelkie prawa zastrzeżone.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
