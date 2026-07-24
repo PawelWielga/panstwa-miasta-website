@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://panstwamiasta.dihor.pl/sitemap.xml
+Sitemap: https://pawelwielga.github.io/panstwa-miasta-website/sitemap.xml

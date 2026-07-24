@@ -5,7 +5,7 @@ Oficjalny landing page gry **Państwa Miasta**.
 Docelowy adres:
 
 ```text
-https://panstwamiasta.dihor.pl
+https://pawelwielga.github.io/panstwa-miasta-website
 ```
 
 ## Co zawiera strona
@@ -47,7 +47,6 @@ Strona jest lekka i statyczna:
 ├── tests/
 │   └── validate_site.py
 ├── .nojekyll
-├── CNAME
 ├── index.html
 ├── robots.txt
 ├── script.js
@@ -83,43 +82,33 @@ Walidator bez zewnętrznych zależności sprawdza między innymi:
 - brak przekierowania strony głównej,
 - poprawność linków lokalnych i kotwic,
 - stały adres polityki prywatności,
-- wartość pliku `CNAME`,
+- standardowy adres projektu GitHub Pages,
 - brak przedwczesnych aktywnych linków do Google Play i klienta WWW.
 
 Workflow `Validate static site` uruchamia te kontrole dla Pull Requestów oraz pushy do `main` i branchy `feature/**`.
 
 ## GitHub Pages
 
-W **Settings → Pages** ustaw:
+Strona korzysta z dotychczasowej konfiguracji GitHub Pages:
 
 1. **Source:** `Deploy from a branch`.
 2. **Branch:** `main`.
 3. **Folder:** `/ (root)`.
-4. W polu **Custom domain** wpisz `panstwamiasta.dihor.pl`.
-5. Po poprawnym wykryciu DNS włącz **Enforce HTTPS**.
 
-Repozytorium zawiera plik `CNAME`, więc domena zostanie zachowana przy publikacji z brancha.
-
-### DNS / Cloudflare
-
-Dla subdomeny dodaj rekord:
+Aktualny publiczny adres:
 
 ```text
-Type: CNAME
-Name: panstwamiasta
-Target: pawelwielga.github.io
+https://pawelwielga.github.io/panstwa-miasta-website/
 ```
 
-Na czas pierwszej weryfikacji domeny przez GitHub Pages warto ustawić rekord jako **DNS only**. Po prawidłowym wydaniu certyfikatu można ponownie ocenić użycie proxy Cloudflare, ale najprostsza i najmniej problematyczna konfiguracja Pages pozostaje bez proxy.
-
-Propagacja DNS i wydanie certyfikatu TLS mogą potrwać. Opcję **Enforce HTTPS** należy włączyć dopiero, gdy GitHub oznaczy certyfikat jako gotowy.
+Własna domena nie jest obecnie wymagana ani konfigurowana. Pliku `CNAME` nie należy dodawać, dopóki rekord DNS i ustawienie **Custom domain** nie będą gotowe.
 
 ## Polityka prywatności
 
 Publiczny adres pozostaje bez zmian:
 
 ```text
-https://panstwamiasta.dihor.pl/privacy-policy/
+https://pawelwielga.github.io/panstwa-miasta-website/privacy-policy/
 ```
 
 Plik `privacy-policy/index.html` jest wersją używaną publicznie. Nie należy usuwać ani przenosić tej ścieżki bez równoczesnej aktualizacji Google Play Console.

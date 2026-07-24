@@ -15,7 +15,6 @@ REQUIRED_FILES = (
     "index.html",
     "styles.css",
     "script.js",
-    "CNAME",
     "robots.txt",
     "sitemap.xml",
     "privacy-policy/index.html",
@@ -126,7 +125,7 @@ def main() -> int:
         fail(f"Duplicate IDs: {sorted(parser.duplicate_ids)}", errors)
     if parser.has_meta_refresh:
         fail("The home page must not redirect with meta refresh.", errors)
-    if parser.canonical != "https://panstwamiasta.dihor.pl/":
+    if parser.canonical != "https://pawelwielga.github.io/panstwa-miasta-website/":
         fail(f"Unexpected canonical URL: {parser.canonical!r}", errors)
 
     missing_meta_names = REQUIRED_META_NAMES - parser.meta_names
@@ -147,9 +146,6 @@ def main() -> int:
         if target is not None and not target.exists():
             fail(f"Broken local reference: {reference} -> {target.relative_to(ROOT)}", errors)
 
-    cname = (ROOT / "CNAME").read_text(encoding="utf-8").strip() if (ROOT / "CNAME").exists() else ""
-    if cname != "panstwamiasta.dihor.pl":
-        fail(f"Unexpected CNAME value: {cname!r}", errors)
 
     if "play.google.com" in html:
         fail("Google Play must not be linked before a real store URL is available.", errors)
