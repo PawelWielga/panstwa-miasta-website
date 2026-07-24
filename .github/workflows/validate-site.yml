@@ -8,9 +8,80 @@ on:
       - feature/**
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
+  fix-project-pages-base:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/feature/initial-landing-page' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Switch landing to the standard GitHub Pages URL
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          old_url = "https://panstwamiasta.dihor.pl"
+          pages_url = "https://pawelwielga.github.io/panstwa-miasta-website"
+
+          for relative_path in (
+              "index.html",
+              "robots.txt",
+              "sitemap.xml",
+              "README.md",
+              "tests/validate_site.py",
+          ):
+              path = Path(relative_path)
+              path.write_text(
+                  path.read_text(encoding="utf-8").replace(old_url, pages_url),
+                  encoding="utf-8",
+              )
+
+          validator = Path("tests/validate_site.py")
+          validator_text = validator.read_text(encoding="utf-8")
+          validator_text = validator_text.replace('    "CNAME",\n', "")
+          validator_text = re.sub(
+              r'\n    cname = \(ROOT / "CNAME"\).*?fail\(f"Unexpected CNAME value: \{cname!r\}", errors\)\n',
+              "\n",
+              validator_text,
+              flags=re.DOTALL,
+          )
+          validator.write_text(validator_text, encoding="utf-8")
+
+          readme = Path("README.md")
+          readme_text = readme.read_text(encoding="utf-8")
+          readme_text = readme_text.replace("├── CNAME\n", "")
+          readme_text = readme_text.replace(
+              "- wartość pliku `CNAME`,\n",
+              "- standardowy adres projektu GitHub Pages,\n",
+          )
+          section_start = readme_text.index("W **Settings → Pages** ustaw:")
+          section_end = readme_text.index("## Polityka prywatności")
+          pages_section = """Strona korzysta z dotychczasowej konfiguracji GitHub Pages:\n\n1. **Source:** `Deploy from a branch`.\n2. **Branch:** `main`.\n3. **Folder:** `/ (root)`.\n\nAktualny publiczny adres:\n\n```text\nhttps://pawelwielga.github.io/panstwa-miasta-website/\n```\n\nWłasna domena nie jest obecnie wymagana ani konfigurowana. Pliku `CNAME` nie należy dodawać, dopóki rekord DNS i ustawienie **Custom domain** nie będą gotowe.\n\n"""
+          readme_text = readme_text[:section_start] + pages_section + readme_text[section_end:]
+          readme.write_text(readme_text, encoding="utf-8")
+
+          Path("CNAME").unlink(missing_ok=True)
+          PY
+
+          python3 tests/validate_site.py
+          node --check script.js
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html robots.txt sitemap.xml README.md tests/validate_site.py
+          git rm --ignore-unmatch CNAME
+          git commit -m "fix: keep standard GitHub Pages address"
+          git push origin HEAD:feature/initial-landing-page
+
   validate:
     runs-on: ubuntu-latest
     steps:
