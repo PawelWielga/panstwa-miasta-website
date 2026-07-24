@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -14,6 +15,8 @@ INDEX = ROOT / "index.html"
 REQUIRED_FILES = (
     "index.html",
     "styles.css",
+    "design-tokens.css",
+    "design-system.json",
     "script.js",
     "robots.txt",
     "sitemap.xml",
@@ -114,11 +117,14 @@ def main() -> int:
         return 1
 
     html = INDEX.read_text(encoding="utf-8")
+    script = (ROOT / "script.js").read_text(encoding="utf-8")
+    tokens = (ROOT / "design-tokens.css").read_text(encoding="utf-8")
+    design_system = json.loads((ROOT / "design-system.json").read_text(encoding="utf-8"))
     parser = SiteParser()
     parser.feed(html)
 
     if parser.html_lang != "pl":
-        fail("The document language must be lang=\"pl\".", errors)
+        fail('The document language must be lang="pl".', errors)
     if parser.h1_count != 1:
         fail(f"Expected exactly one H1, found {parser.h1_count}.", errors)
     if parser.duplicate_ids:
@@ -146,6 +152,21 @@ def main() -> int:
         if target is not None and not target.exists():
             fail(f"Broken local reference: {reference} -> {target.relative_to(ROOT)}", errors)
 
+    if "design-tokens.css" not in script:
+        fail("script.js must load the pinned design token stylesheet.", errors)
+    if design_system.get("localCopy") != "design-tokens.css":
+        fail("design-system.json must identify design-tokens.css as the local copy.", errors)
+    if f"@{design_system.get('version')}" not in script:
+        fail("The script design-system marker must match design-system.json.", errors)
+
+    for variable in (
+        "--pm-color-primary",
+        "--pm-color-background",
+        "--pm-color-text-primary",
+        "--pm-radius-standard",
+    ):
+        if variable not in tokens:
+            fail(f"Missing shared token in design-tokens.css: {variable}", errors)
 
     if "play.google.com" in html:
         fail("Google Play must not be linked before a real store URL is available.", errors)
@@ -157,7 +178,10 @@ def main() -> int:
             print(f"ERROR: {error}")
         return 1
 
-    print(f"Validated {len(REQUIRED_FILES)} required files, {len(parser.ids)} IDs and {len(parser.links)} references.")
+    print(
+        f"Validated {len(REQUIRED_FILES)} required files, "
+        f"{len(parser.ids)} IDs and {len(parser.links)} references."
+    )
     return 0
 
 
