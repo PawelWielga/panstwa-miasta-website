@@ -1,6 +1,6 @@
 # Państwa Miasta Website
 
-Oficjalna strona internetowa gry **Państwa Miasta**.
+Oficjalny landing page gry **Państwa Miasta**.
 
 Docelowy adres:
 
@@ -8,50 +8,57 @@ Docelowy adres:
 https://panstwamiasta.dihor.pl
 ```
 
-## Status projektu
+## Co zawiera strona
 
-Repozytorium udostępnia obecnie publiczną politykę prywatności wymaganą przez Google Play Console. Strona główna przekierowuje jeszcze do dokumentu polityki prywatności.
+- opis gry i potwierdzonych funkcji aplikacji na Androida,
+- zalety lokalnej rozgrywki przez Wi-Fi lub hotspot,
+- proces tworzenia pokoju, rundy, oceniania i wyników,
+- schematyczne makiety aktualnego UI aplikacji,
+- informację o planowanym kliencie przeglądarkowym,
+- FAQ, metadane SEO, Open Graph, favicon, `robots.txt` i `sitemap.xml`,
+- publiczną politykę prywatności pod niezmiennym adresem `/privacy-policy/`.
 
-Docelowo repozytorium będzie zawierało pełny landing page gry.
+Przycisk Google Play pozostaje nieaktywny i jest oznaczony jako „Wkrótce”, dopóki nie będzie dostępny prawdziwy adres karty aplikacji. Klient przeglądarkowy również nie jest przedstawiany jako gotowa funkcja.
 
-## Zakres
+## Technologia
 
-Planowana strona będzie zawierać:
+Strona jest lekka i statyczna:
 
-- opis gry i jej najważniejszych funkcji,
-- instrukcję rozpoczęcia rozgrywki,
-- zrzuty ekranu,
-- odnośnik do aplikacji w Google Play,
-- odnośnik do klienta przeglądarkowego,
-- sekcję FAQ i pomoc,
-- politykę prywatności.
+- semantyczny HTML5,
+- CSS bez frameworka,
+- niewielki, natywny JavaScript dla menu mobilnego i nagłówka,
+- brak zależności produkcyjnych i zewnętrznych fontów,
+- publikacja bezpośrednio z katalogu głównego przez GitHub Pages.
 
-Klient przeglądarkowy gry rozwijany jest osobno w repozytorium [`PawelWielga/panstwa-miasta-play`](https://github.com/PawelWielga/panstwa-miasta-play).
-
-## Obecna struktura
+## Struktura
 
 ```text
 .
-├── index.html
+├── .github/workflows/validate-site.yml
+├── assets/
+│   ├── favicon.svg
+│   ├── logo-mark.svg
+│   └── og-image.svg
+├── docs/
+│   ├── privacy-policy.md
+│   └── screenshots/
 ├── privacy-policy/
 │   └── index.html
-├── docs/
-│   └── privacy-policy.md
+├── tests/
+│   └── validate_site.py
 ├── .nojekyll
-└── README.md
+├── CNAME
+├── index.html
+├── robots.txt
+├── script.js
+├── sitemap.xml
+└── styles.css
 ```
-
-- `index.html` przekierowuje obecnie do polityki prywatności.
-- `privacy-policy/index.html` jest publiczną wersją dokumentu.
-- `docs/privacy-policy.md` zawiera źródłową wersję polityki.
-- `.nojekyll` wyłącza przetwarzanie strony przez Jekyll.
 
 ## Uruchomienie lokalne
 
-Strona jest statyczna. Można ją uruchomić dowolnym lokalnym serwerem HTTP, na przykład:
-
 ```bash
-python -m http.server 8080
+python3 -m http.server 8080
 ```
 
 Następnie otwórz:
@@ -60,47 +67,73 @@ Następnie otwórz:
 http://localhost:8080
 ```
 
-Nie otwieraj plików wyłącznie przez `file://`, ponieważ zachowanie ścieżek i przekierowań może różnić się od hostingu HTTP.
+Nie otwieraj plików wyłącznie przez `file://`, ponieważ ścieżki bezwzględne i zachowanie nawigacji mogą różnić się od hostingu HTTP.
+
+## Kontrole
+
+```bash
+python3 tests/validate_site.py
+node --check script.js
+```
+
+Walidator bez zewnętrznych zależności sprawdza między innymi:
+
+- wymagane pliki,
+- pojedynczy nagłówek `h1`, język dokumentu i metadane,
+- brak przekierowania strony głównej,
+- poprawność linków lokalnych i kotwic,
+- stały adres polityki prywatności,
+- wartość pliku `CNAME`,
+- brak przedwczesnych aktywnych linków do Google Play i klienta WWW.
+
+Workflow `Validate static site` uruchamia te kontrole dla Pull Requestów oraz pushy do `main` i branchy `feature/**`.
 
 ## GitHub Pages
 
-Repozytorium jest przeznaczone do publikacji przez GitHub Pages.
+W **Settings → Pages** ustaw:
 
-Konfiguracja dla obecnej statycznej wersji:
+1. **Source:** `Deploy from a branch`.
+2. **Branch:** `main`.
+3. **Folder:** `/ (root)`.
+4. W polu **Custom domain** wpisz `panstwamiasta.dihor.pl`.
+5. Po poprawnym wykryciu DNS włącz **Enforce HTTPS**.
 
-1. Otwórz **Settings → Pages**.
-2. W sekcji **Build and deployment** wybierz **Deploy from a branch**.
-3. Wskaż branch `main` oraz katalog `/ (root)`.
-4. Zapisz ustawienia i poczekaj na publikację.
+Repozytorium zawiera plik `CNAME`, więc domena zostanie zachowana przy publikacji z brancha.
 
-Po podpięciu własnej domeny docelowym adresem strony będzie:
+### DNS / Cloudflare
+
+Dla subdomeny dodaj rekord:
 
 ```text
-https://panstwamiasta.dihor.pl
+Type: CNAME
+Name: panstwamiasta
+Target: pawelwielga.github.io
 ```
 
-Rekord DNS i pole **Custom domain** w ustawieniach GitHub Pages wymagają ręcznej konfiguracji. Po podpięciu domeny należy również włączyć **Enforce HTTPS**.
+Na czas pierwszej weryfikacji domeny przez GitHub Pages warto ustawić rekord jako **DNS only**. Po prawidłowym wydaniu certyfikatu można ponownie ocenić użycie proxy Cloudflare, ale najprostsza i najmniej problematyczna konfiguracja Pages pozostaje bez proxy.
+
+Propagacja DNS i wydanie certyfikatu TLS mogą potrwać. Opcję **Enforce HTTPS** należy włączyć dopiero, gdy GitHub oznaczy certyfikat jako gotowy.
 
 ## Polityka prywatności
 
-Publiczna ścieżka polityki prywatności pozostaje częścią tego repozytorium:
+Publiczny adres pozostaje bez zmian:
 
 ```text
-/privacy-policy/
+https://panstwamiasta.dihor.pl/privacy-policy/
 ```
 
-Nie należy usuwać ani zmieniać tej ścieżki bez równoczesnego zaktualizowania adresu w Google Play Console.
+Plik `privacy-policy/index.html` jest wersją używaną publicznie. Nie należy usuwać ani przenosić tej ścieżki bez równoczesnej aktualizacji Google Play Console.
 
 ## Powiązane repozytoria
 
 - [`PawelWielga/panstwa-miasta`](https://github.com/PawelWielga/panstwa-miasta) — aplikacja mobilna na Androida i logika gry.
-- [`PawelWielga/panstwa-miasta-play`](https://github.com/PawelWielga/panstwa-miasta-play) — klient przeglądarkowy do dołączania do rozgrywki.
+- [`PawelWielga/panstwa-miasta-play`](https://github.com/PawelWielga/panstwa-miasta-play) — planowany klient przeglądarkowy.
 
-## Plan rozwoju
+## Materiały do uzupełnienia
 
-1. Zastąpienie przekierowania pełnym landing page.
-2. Zachowanie polityki prywatności pod stałą ścieżką.
-3. Dodanie responsywnego układu, treści i materiałów promocyjnych.
-4. Dodanie SEO, Open Graph, favicon, `robots.txt` i `sitemap.xml`.
-5. Podpięcie domeny `panstwamiasta.dihor.pl`.
-6. Dodanie odnośnika do Google Play i gry WWW, gdy będą gotowe.
+Po udostępnieniu wersji sklepowej należy:
+
+1. podmienić nieaktywne CTA na prawdziwy link Google Play,
+2. potwierdzić informację o cenie w FAQ,
+3. zastąpić schematyczne makiety prawdziwymi screenshotami z aktualnej wersji aplikacji,
+4. aktywować link do `play.panstwamiasta.dihor.pl` dopiero po wdrożeniu działającego klienta WWW.
