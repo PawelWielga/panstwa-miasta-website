@@ -1,7 +1,8 @@
 {
   "repository": "PawelWielga/panstwa-miasta-design",
   "version": "0.2.0",
+  "commit": "e28d643a2cc10eb2e47f55f82e8252485674ec2f",
   "source": "dist/tokens.css",
   "localCopy": "design-tokens.css",
-  "updatePolicy": "Update only from a reviewed and versioned design-system release."
+  "updatePolicy": "Update only from a reviewed and immutable design-system commit."
 }
