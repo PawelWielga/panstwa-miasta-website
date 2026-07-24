@@ -1,4 +1,10 @@
 (() => {
+  const designTokens = document.createElement('link');
+  designTokens.rel = 'stylesheet';
+  designTokens.href = 'design-tokens.css';
+  designTokens.dataset.designSystem = 'panstwa-miasta-design@0.2.0';
+  document.head.append(designTokens);
+
   const menuButton = document.querySelector('[data-menu-button]');
   const navigation = document.querySelector('[data-navigation]');
   const header = document.querySelector('[data-header]');
