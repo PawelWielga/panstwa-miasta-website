@@ -1,0 +1,4 @@
+status=success
+checked_at=2026-07-24T11:39:54Z
+site=https://pawelwielga.github.io/panstwa-miasta-website/
+privacy_policy=https://pawelwielga.github.io/panstwa-miasta-website/privacy-policy/
