@@ -159,6 +159,12 @@ def main() -> int:
     if f"@{design_system.get('version')}" not in script:
         fail("The script design-system marker must match design-system.json.", errors)
 
+    design_commit = design_system.get("commit")
+    if not isinstance(design_commit, str) or len(design_commit) != 40:
+        fail("design-system.json must pin a full 40-character commit SHA.", errors)
+    elif design_commit not in tokens:
+        fail("design-tokens.css must identify the pinned design-system commit.", errors)
+
     for variable in (
         "--pm-color-primary",
         "--pm-color-background",
