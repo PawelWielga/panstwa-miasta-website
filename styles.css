@@ -422,7 +422,7 @@ p {
 .phone-speaker {
   position: absolute;
   z-index: 5;
-  top: 9px;
+  top: 0;
   left: 50%;
   width: 34%;
   height: 18px;
