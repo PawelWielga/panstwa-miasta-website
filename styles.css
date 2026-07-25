@@ -1,5 +1,6 @@
 @import url("styles-base.css");
 
 .phone-speaker {
-  top: -8px;
+  top: 0;
+  transform: translate(-50%, -8px);
 }
