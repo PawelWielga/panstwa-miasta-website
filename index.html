@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Państwa Miasta na Androida | Gra bez kartek</title>
-  <meta name="description" content="Nowoczesna gra Państwa Miasta na Androida. Graj lokalnie przez Wi-Fi lub hotspot, bez konta, kartek i ręcznego liczenia punktów.">
+  <title>Państwa Miasta | Gra na Androida z dołączaniem przez WWW</title>
+  <meta name="description" content="Nowoczesna gra Państwa Miasta z hostem na Androidzie. Graj lokalnie przez Wi-Fi lub hotspot, a w wydaniu 1.2.0 zapraszaj też graczy przez klienta WWW.">
   <meta name="theme-color" content="#1565c0">
   <meta name="color-scheme" content="light">
   <link rel="canonical" href="https://pawelwielga.github.io/panstwa-miasta-website/">
@@ -15,7 +15,7 @@
   <meta property="og:locale" content="pl_PL">
   <meta property="og:site_name" content="Państwa Miasta">
   <meta property="og:title" content="Państwa Miasta bez kartek i liczenia punktów">
-  <meta property="og:description" content="Lokalna gra wieloosobowa na Androida. Połączcie telefony przez Wi-Fi lub hotspot i grajcie bez konta.">
+  <meta property="og:description" content="Gra wieloosobowa z hostem na Androidzie: lokalnie przez Wi-Fi lub hotspot oraz, od wydania 1.2.0, z dołączaniem przez klienta WWW.">
   <meta property="og:url" content="https://pawelwielga.github.io/panstwa-miasta-website/">
   <meta property="og:image" content="https://pawelwielga.github.io/panstwa-miasta-website/assets/og-image.svg">
   <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Państwa Miasta bez kartek i liczenia punktów">
-  <meta name="twitter:description" content="Nowoczesna wersja klasycznej gry słownej na telefony z Androidem.">
+  <meta name="twitter:description" content="Gra słowna z hostem na Androidzie i dołączaniem lokalnym lub przez klienta WWW w wydaniu 1.2.0.">
   <meta name="twitter:image" content="https://pawelwielga.github.io/panstwa-miasta-website/assets/og-image.svg">
 
   <script type="application/ld+json">
@@ -32,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Państwa Miasta",
-    "description": "Gra słowna na Androida z lokalnym trybem wieloosobowym przez Wi-Fi lub hotspot.",
+    "description": "Gra słowna z hostem na Androidzie, lokalnym multiplayerem przez Wi-Fi lub hotspot i dołączaniem przez klienta WWW w wydaniu 1.2.0.",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Android 6.0 lub nowszy",
     "url": "https://pawelwielga.github.io/panstwa-miasta-website/",
@@ -79,10 +79,10 @@
         <div class="hero-copy">
           <p class="eyebrow">
             <span class="status-dot" aria-hidden="true"></span>
-            Gra słowna na Androida
+            Gra słowna z hostem na Androidzie
           </p>
           <h1 id="hero-title">Państwa Miasta.<br><span>Bez kartek i liczenia punktów.</span></h1>
-          <p class="hero-lead">Jedna osoba tworzy pokój, pozostali dołączają przez tę samą sieć Wi-Fi lub hotspot. Aplikacja prowadzi rundę, zbiera odpowiedzi i sama podlicza wyniki.</p>
+          <p class="hero-lead">Jedna osoba tworzy pokój na Androidzie. Pozostali mogą dołączyć lokalnie przez Wi-Fi lub hotspot, a w wydaniu 1.2.0 także przez klienta WWW z użyciem krótkiego kodu, linku lub QR. Host prowadzi rundę i jest źródłem prawdy dla wyników.</p>
           <div class="hero-actions">
             <span class="button button--primary button--disabled" aria-disabled="true" title="Karta aplikacji w Google Play nie jest jeszcze aktywna">
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -99,11 +99,11 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12a10 10 0 0 1 14 0M8 15a6 6 0 0 1 8 0m-5 3a2 2 0 0 1 2 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              Wi-Fi lub hotspot
+              LAN lub online
             </li>
             <li>
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 3h10v18H7zM9 6h6M10 18h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              Android 6.0+
+              Host Android 6.0+
             </li>
           </ul>
         </div>
@@ -130,8 +130,8 @@
             </div>
           </div>
           <div class="visual-note">
-            <strong>Gracie razem, lokalnie</strong>
-            <span>Telefony komunikują się bezpośrednio w tej samej sieci.</span>
+            <strong>Lokalnie lub online</strong>
+            <span>W LAN urządzenia łączą się bezpośrednio. Tryb online 1.2.0 używa WebRTC i klienta WWW.</span>
           </div>
         </div>
       </div>
@@ -141,7 +141,7 @@
       <div class="container trust-grid">
         <div><strong>2–12</strong><span>graczy w pokoju</span></div>
         <div><strong>0</strong><span>wymaganych kont</span></div>
-        <div><strong>1</strong><span>wspólna sieć</span></div>
+        <div><strong>LAN / WWW</strong><span>dwa sposoby dołączenia</span></div>
         <div><strong>100%</strong><span>automatycznej punktacji</span></div>
       </div>
     </section>
@@ -151,7 +151,7 @@
         <div class="section-heading">
           <p class="eyebrow">Mniej przygotowań, więcej grania</p>
           <h2 id="benefits-title">Klasyczne zasady w wygodnej formie</h2>
-          <p>Nie szukacie kartek, długopisów ani kalkulatora. Każdy wpisuje odpowiedzi na swoim telefonie, a aplikacja pilnuje przebiegu gry.</p>
+          <p>Nie szukacie kartek, długopisów ani kalkulatora. Każdy wpisuje odpowiedzi na swoim urządzeniu, a host pilnuje wspólnego przebiegu gry.</p>
         </div>
 
         <div class="benefits-grid">
@@ -160,7 +160,7 @@
               <svg viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </span>
             <h3>Bez kartek</h3>
-            <p>Odpowiedzi wpisujecie bezpośrednio w aplikacji. Niczego nie trzeba drukować ani przygotowywać.</p>
+            <p>Odpowiedzi wpisujecie bezpośrednio w aplikacji lub kliencie WWW. Niczego nie trzeba drukować ani przygotowywać.</p>
           </article>
           <article class="benefit-card">
             <span class="icon-box icon-box--yellow" aria-hidden="true">
@@ -173,15 +173,15 @@
             <span class="icon-box icon-box--green" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M8 13a4 4 0 1 1 0-8m8 8a4 4 0 1 0 0-8M2 21a6 6 0 0 1 12 0m-4 0a6 6 0 0 1 12 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </span>
-            <h3>Lokalny multiplayer</h3>
-            <p>Jeden telefon jest gospodarzem, a pozostałe dołączają do wspólnego pokoju w lokalnej sieci.</p>
+            <h3>Lokalnie lub online</h3>
+            <p>Host działa na Androidzie. Gracze mogą dołączyć w tej samej sieci, a w wydaniu 1.2.0 również przez zgodny klient WWW.</p>
           </article>
           <article class="benefit-card">
             <span class="icon-box icon-box--purple" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16M6.3 6.3l11.4 11.4M17.7 6.3 6.3 17.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             </span>
             <h3>Wi-Fi albo hotspot</h3>
-            <p>Możecie użyć domowej sieci lub hotspotu utworzonego przez jednego z graczy. Internet nie jest potrzebny do samej rozgrywki.</p>
+            <p>Tryb lokalny nadal działa przez domową sieć lub hotspot utworzony przez jednego z graczy i nie wymaga internetu do samej rozgrywki.</p>
           </article>
           <article class="benefit-card">
             <span class="icon-box icon-box--orange" aria-hidden="true">
@@ -192,7 +192,7 @@
           </article>
           <article class="benefit-card">
             <span class="icon-box icon-box--red" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M5.6 5.6l2.8 2.8m7.2 7.2 2.8 2.8m0-12.8-2.8 2.8m-7.2 7.2-2.8 2.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M5.6 5.6l2.8 2.8m7.2 7.2 2.8 2.8m0-12.8-2.8 2.8m-7.2 7.2-2.8 2.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             </span>
             <h3>Prosta obsługa</h3>
             <p>Duże przyciski, czytelne komunikaty i prowadzenie krok po kroku ułatwiają grę osobom w różnym wieku.</p>
@@ -206,7 +206,7 @@
         <div class="section-heading section-heading--center">
           <p class="eyebrow">Od pokoju do rankingu</p>
           <h2 id="steps-title">Jak zacząć grę?</h2>
-          <p>Wystarczy kilka telefonów z Androidem połączonych z tą samą siecią.</p>
+          <p>Host uruchamia grę na Androidzie, a pozostali wybierają połączenie lokalne albo, w wydaniu 1.2.0, klienta WWW.</p>
         </div>
 
         <ol class="steps-grid">
@@ -218,22 +218,22 @@
           <li class="step-card">
             <span class="step-number">2</span>
             <h3>Dołączcie</h3>
-            <p>Pozostali wybierają znaleziony pokój. W razie potrzeby mogą użyć QR lub danych wpisanych ręcznie.</p>
+            <p>W LAN można wybrać znaleziony pokój, QR lub dane ręczne. Online klient WWW używa krótkiego sześci znakowego kodu, linku albo QR.</p>
           </li>
           <li class="step-card">
             <span class="step-number">3</span>
             <h3>Wylosujcie literę</h3>
-            <p>Po starcie rundy aplikacja wybiera literę wspólną dla wszystkich uczestników.</p>
+            <p>Po starcie rundy host wybiera literę wspólną dla wszystkich uczestników i synchronizuje ją z klientami.</p>
           </li>
           <li class="step-card">
             <span class="step-number">4</span>
             <h3>Wpiszcie odpowiedzi</h3>
-            <p>Każdy uzupełnia kategorie na swoim telefonie przed końcem ustalonego czasu.</p>
+            <p>Każdy uzupełnia kategorie na swoim urządzeniu przed końcem ustalonego czasu.</p>
           </li>
           <li class="step-card">
             <span class="step-number">5</span>
             <h3>Oceńcie odpowiedzi</h3>
-            <p>Gracze wspólnie akceptują odpowiedzi i rozstrzygają wątpliwe propozycje.</p>
+            <p>Host rozstrzyga odpowiedzi, a wspólny stan oceny i wyników jest synchronizowany z graczami.</p>
           </li>
           <li class="step-card">
             <span class="step-number">6</span>
@@ -335,12 +335,12 @@
         <div class="section-heading">
           <p class="eyebrow">Dla różnych pokoleń</p>
           <h2 id="audience-title">Gra, którą łatwo zabrać ze sobą</h2>
-          <p>W domu, na wyjeździe albo podczas spotkania. Potrzebujecie tylko telefonów i wspólnej sieci.</p>
+          <p>W domu, na wyjeździe albo podczas spotkania. Lokalnie wystarczy wspólna sieć, a tryb online pozwala dołączyć przez przeglądarkę.</p>
         </div>
         <div class="audience-grid">
           <article><span aria-hidden="true">🏠</span><h3>Rodzinne spotkania</h3><p>Proste zasady i czytelny interfejs pomagają szybko włączyć do gry dzieci, dorosłych i seniorów.</p></article>
           <article><span aria-hidden="true">🎉</span><h3>Wieczór ze znajomymi</h3><p>Krótka konfiguracja i wspólne ocenianie odpowiedzi dobrze pasują do luźnej zabawy w grupie.</p></article>
-          <article><span aria-hidden="true">🚆</span><h3>Podróż i wyjazd</h3><p>Hotspot jednego telefonu wystarczy, żeby stworzyć lokalną sieć nawet bez domowego Wi-Fi.</p></article>
+          <article><span aria-hidden="true">🚆</span><h3>Podróż i wyjazd</h3><p>Hotspot jednego telefonu wystarczy do gry lokalnej, a klient WWW daje dodatkową opcję, gdy gracze mają dostęp do internetu.</p></article>
           <article><span aria-hidden="true">👨‍👩‍👧‍👦</span><h3>Różne grupy wiekowe</h3><p>Duże elementy, spokojny układ i brak technicznego żargonu ułatwiają wspólną rozgrywkę.</p></article>
         </div>
       </div>
@@ -349,18 +349,18 @@
     <section class="section browser-section" aria-labelledby="browser-title">
       <div class="container browser-card">
         <div class="browser-copy">
-          <p class="eyebrow eyebrow--light">W planach</p>
+          <p class="eyebrow eyebrow--light">Klient WWW gotowy dla 1.2.0</p>
           <h2 id="browser-title">Dołączanie przez przeglądarkę</h2>
-          <p>Pracujemy nad klientem WWW, dzięki któremu do lokalnej gry będzie można dołączyć bez instalowania aplikacji. To rozwiązanie ma pomóc szczególnie osobom korzystającym z iPhone’ów.</p>
+          <p>Produkcyjny klient WWW jest już wdrożony i zgodny z kontraktem wydania 1.2.0. Po publikacji hosta Android 1.2.0 gracz będzie mógł dołączyć bez instalowania aplikacji, używając krótkiego kodu pokoju, linku lub QR.</p>
           <div class="coming-address">
-            <span>Docelowy adres</span>
-            <code>play.panstwamiasta.dihor.pl</code>
+            <span>Produkcyjny adres</span>
+            <code>pawelwielga.github.io/panstwa-miasta-play/</code>
           </div>
-          <span class="button button--light button--disabled" aria-disabled="true">Wkrótce</span>
+          <a class="button button--light" href="https://pawelwielga.github.io/panstwa-miasta-play/">Otwórz klienta WWW</a>
         </div>
         <div class="browser-visual" aria-hidden="true">
           <div class="browser-window">
-            <div class="browser-bar"><i></i><i></i><i></i><span>play.panstwamiasta.dihor.pl</span></div>
+            <div class="browser-bar"><i></i><i></i><i></i><span>pawelwielga.github.io/panstwa-miasta-play/</span></div>
             <div class="browser-content">
               <img src="assets/logo-mark.svg" width="72" height="72" alt="">
               <strong>Dołącz do pokoju</strong>
@@ -377,12 +377,12 @@
         <div class="section-heading faq-heading">
           <p class="eyebrow">Najczęstsze pytania</p>
           <h2 id="faq-title">FAQ</h2>
-          <p>Najważniejsze informacje o obecnej wersji gry na Androida.</p>
+          <p>Najważniejsze informacje o wersji przygotowywanej do wydania 1.2.0.</p>
         </div>
         <div class="faq-list">
           <details>
             <summary>Czy gra wymaga internetu?</summary>
-            <p>Nie do samej rozgrywki. Telefony komunikują się lokalnie przez tę samą sieć Wi-Fi albo hotspot. Aplikacja może korzystać z internetu do reklam lub pobrania ich konfiguracji, jeśli reklamy są włączone.</p>
+            <p>Nie w trybie LAN/hotspot. Tryb online i dołączanie przez klienta WWW wymagają internetu do sygnalizacji PeerJS i zestawienia bezpośredniego połączenia WebRTC.</p>
           </details>
           <details>
             <summary>Czy trzeba zakładać konto?</summary>
@@ -390,11 +390,11 @@
           </details>
           <details>
             <summary>Czy każdy gracz musi mieć aplikację?</summary>
-            <p>W obecnej wersji tak. Każdy uczestnik dołącza z własnego telefonu z Androidem. Dołączanie przez przeglądarkę jest dopiero w planach.</p>
+            <p>Host korzysta z aplikacji Android. W wydaniu 1.2.0 pozostali gracze mogą dołączyć lokalnie z Androida albo przez zgodny klient WWW bez instalowania aplikacji.</p>
           </details>
           <details>
             <summary>Czy można grać na iPhonie?</summary>
-            <p>Obecnie nie. Nie ma natywnej aplikacji na iPhone’a. Planowany klient przeglądarkowy ma w przyszłości umożliwić takim graczom dołączanie do pokoju.</p>
+            <p>Nie ma natywnej aplikacji na iPhone’a. W wydaniu 1.2.0 dołączanie przez klienta WWW będzie dostępne w obsługiwanej przeglądarce; host nadal działa na Androidzie.</p>
           </details>
           <details>
             <summary>Ilu graczy może dołączyć?</summary>
@@ -403,6 +403,10 @@
           <details>
             <summary>Czy można użyć hotspotu?</summary>
             <p>Tak. Jeden z graczy może udostępnić hotspot, a pozostałe telefony łączą się z nim jak ze zwykłą siecią Wi-Fi. Hotspot trzeba włączyć ręcznie w ustawieniach telefonu.</p>
+          </details>
+          <details>
+            <summary>Czy tryb online działa w każdej sieci?</summary>
+            <p>Nie zawsze. Wydanie 1.2.0 korzysta z bezpośredniego WebRTC i nie używa własnego serwera TURN. W części restrykcyjnych sieci połączenie P2P może się nie zestawić; aplikacja powinna wtedy zakończyć próbę czytelnym błędem.</p>
           </details>
           <details>
             <summary>Czy gra jest darmowa?</summary>
@@ -418,7 +422,7 @@
         <div>
           <p class="eyebrow">Gotowi na literę?</p>
           <h2 id="cta-title">Zagrajcie bez kartek i ręcznego liczenia</h2>
-          <p>Aplikacja na Androida pojawi się w Google Play po zakończeniu publikacji.</p>
+          <p>Aplikacja na Androida pojawi się w Google Play po zakończeniu publikacji. Klient WWW dla wydania 1.2.0 jest już wdrożony.</p>
         </div>
         <span class="button button--primary button--disabled" aria-disabled="true">Wkrótce w Google Play</span>
       </div>
@@ -432,7 +436,7 @@
           <img src="assets/logo-mark.svg" width="40" height="40" alt="">
           <span>Państwa Miasta</span>
         </a>
-        <p>Nowoczesna wersja klasycznej gry słownej na telefony z Androidem.</p>
+        <p>Nowoczesna wersja klasycznej gry słownej z hostem na Androidzie i dołączaniem lokalnym lub przez WWW.</p>
       </div>
       <nav aria-label="Linki w stopce">
         <a href="#jak-to-dziala">Jak to działa</a>
