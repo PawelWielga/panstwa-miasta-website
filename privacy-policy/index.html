@@ -200,9 +200,10 @@
       <ul>
         <li><code>INTERNET</code> - do komunikacji multiplayer lokalnej i online oraz, zależnie od wariantu, reklam i konfiguracji reklam,</li>
         <li><code>ACCESS_NETWORK_STATE</code> - do sprawdzenia stanu połączenia sieciowego,</li>
+        <li><code>CHANGE_NETWORK_STATE</code> - jako warunek systemowy dla foreground service utrzymującego połączenie sieciowe z innymi urządzeniami,</li>
         <li><code>CAMERA</code> - do opcjonalnego skanowania kodu QR pokoju,</li>
         <li><code>POST_NOTIFICATIONS</code> - do pokazania powiadomienia aktywnej gry na Androidzie 13 i nowszych,</li>
-        <li><code>FOREGROUND_SERVICE</code> oraz <code>FOREGROUND_SERVICE_DATA_SYNC</code> - do utrzymania aktywnej gry multiplayer podczas działania aplikacji w tle.</li>
+        <li><code>FOREGROUND_SERVICE</code> oraz <code>FOREGROUND_SERVICE_CONNECTED_DEVICE</code> - do utrzymania aktywnej sesji multiplayer wymagającej ciągłego połączenia z innymi urządzeniami.</li>
       </ul>
 
       <h2>9. Jak długo przechowujemy dane</h2>
