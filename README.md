@@ -2,23 +2,29 @@
 
 Oficjalny landing page gry **Państwa Miasta**.
 
-Docelowy adres:
+Publiczny adres:
 
 ```text
-https://pawelwielga.github.io/panstwa-miasta-website
+https://pawelwielga.github.io/panstwa-miasta-website/
 ```
 
 ## Co zawiera strona
 
 - opis gry i potwierdzonych funkcji aplikacji na Androida,
-- zalety lokalnej rozgrywki przez Wi-Fi lub hotspot,
+- lokalną rozgrywkę przez Wi-Fi lub hotspot,
+- przygotowany do wydania 1.2.0 tryb online z hostem Android i klientem WWW,
 - proces tworzenia pokoju, rundy, oceniania i wyników,
 - schematyczne makiety aktualnego UI aplikacji,
-- informację o planowanym kliencie przeglądarkowym,
 - FAQ, metadane SEO, Open Graph, favicon, `robots.txt` i `sitemap.xml`,
 - publiczną politykę prywatności pod niezmiennym adresem `/privacy-policy/`.
 
-Przycisk Google Play pozostaje nieaktywny i jest oznaczony jako „Wkrótce”, dopóki nie będzie dostępny prawdziwy adres karty aplikacji. Klient przeglądarkowy również nie jest przedstawiany jako gotowa funkcja.
+Przycisk Google Play pozostaje nieaktywny i jest oznaczony jako „Wkrótce”, dopóki nie będzie dostępny prawdziwy adres karty aplikacji. Produkcyjny klient WWW jest już wdrożony pod adresem:
+
+```text
+https://pawelwielga.github.io/panstwa-miasta-play/
+```
+
+Landing opisuje online jako funkcję wydania Android 1.2.0, żeby nie sugerować, że nieopublikowana jeszcze wersja Androida jest już dostępna w Google Play.
 
 ## Technologia
 
@@ -66,7 +72,7 @@ Następnie otwórz:
 http://localhost:8080
 ```
 
-Nie otwieraj plików wyłącznie przez `file://`, ponieważ ścieżki bezwzględne i zachowanie nawigacji mogą różnić się od hostingu HTTP.
+Nie otwieraj plików wyłącznie przez `file://`, ponieważ ścieżki i zachowanie nawigacji mogą różnić się od hostingu HTTP.
 
 ## Kontrole
 
@@ -83,7 +89,10 @@ Walidator bez zewnętrznych zależności sprawdza między innymi:
 - poprawność linków lokalnych i kotwic,
 - stały adres polityki prywatności,
 - standardowy adres projektu GitHub Pages,
-- brak przedwczesnych aktywnych linków do Google Play i klienta WWW.
+- brak przedwczesnego aktywnego linku Google Play,
+- obecność właściwego produkcyjnego adresu klienta WWW,
+- brak starego, niewdrożonego adresu klienta,
+- opis PeerJS/WebRTC i GitHub Pages w publicznej polityce prywatności.
 
 Workflow `Validate static site` uruchamia te kontrole dla Pull Requestów oraz pushy do `main` i branchy `feature/**`.
 
@@ -113,16 +122,17 @@ https://pawelwielga.github.io/panstwa-miasta-website/privacy-policy/
 
 Plik `privacy-policy/index.html` jest wersją używaną publicznie. Nie należy usuwać ani przenosić tej ścieżki bez równoczesnej aktualizacji Google Play Console.
 
+Polityka opisuje zarówno LAN/hotspot, jak i tryb online 1.2.0: publiczną sygnalizację PeerJS, bezpośredni WebRTC DataChannel, brak własnego TURN, hosting klienta WWW na GitHub Pages oraz zależny od wariantu release zakres reklam Google AdMob.
+
 ## Powiązane repozytoria
 
-- [`PawelWielga/panstwa-miasta`](https://github.com/PawelWielga/panstwa-miasta) — aplikacja mobilna na Androida i logika gry.
-- [`PawelWielga/panstwa-miasta-play`](https://github.com/PawelWielga/panstwa-miasta-play) — planowany klient przeglądarkowy.
+- [`PawelWielga/panstwa-miasta`](https://github.com/PawelWielga/panstwa-miasta) — aplikacja Android, host i źródło prawdy dla gry.
+- [`PawelWielga/panstwa-miasta-play`](https://github.com/PawelWielga/panstwa-miasta-play) — produkcyjny klient WWW dołączający do hosta Android.
 
-## Materiały do uzupełnienia
+## Materiały do uzupełnienia przy publikacji Androida
 
 Po udostępnieniu wersji sklepowej należy:
 
 1. podmienić nieaktywne CTA na prawdziwy link Google Play,
 2. potwierdzić informację o cenie w FAQ,
-3. zastąpić schematyczne makiety prawdziwymi screenshotami z aktualnej wersji aplikacji,
-4. aktywować link do `play.panstwamiasta.dihor.pl` dopiero po wdrożeniu działającego klienta WWW.
+3. zastąpić schematyczne makiety prawdziwymi screenshotami z aktualnej wersji aplikacji.
