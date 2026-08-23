@@ -11,6 +11,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
+PRIVACY = ROOT / "privacy-policy" / "index.html"
 
 REQUIRED_FILES = (
     "index.html",
@@ -33,6 +34,8 @@ REQUIRED_META_PROPERTIES = {
     "og:url",
     "og:image",
 }
+PRODUCTION_WEB_CLIENT_URL = "https://pawelwielga.github.io/panstwa-miasta-play/"
+OBSOLETE_WEB_CLIENT_HOST = "play.panstwamiasta.dihor.pl"
 
 
 class SiteParser(HTMLParser):
@@ -117,6 +120,7 @@ def main() -> int:
         return 1
 
     html = INDEX.read_text(encoding="utf-8")
+    privacy_html = PRIVACY.read_text(encoding="utf-8") if PRIVACY.is_file() else ""
     script = (ROOT / "script.js").read_text(encoding="utf-8")
     tokens = (ROOT / "design-tokens.css").read_text(encoding="utf-8")
     design_system = json.loads((ROOT / "design-system.json").read_text(encoding="utf-8"))
@@ -176,8 +180,21 @@ def main() -> int:
 
     if "play.google.com" in html:
         fail("Google Play must not be linked before a real store URL is available.", errors)
-    if 'href="https://play.panstwamiasta.dihor.pl' in html:
-        fail("The planned browser client must not be exposed as an active link.", errors)
+
+    if PRODUCTION_WEB_CLIENT_URL not in html:
+        fail("The production browser client URL must be exposed on the landing page.", errors)
+    if OBSOLETE_WEB_CLIENT_HOST in html:
+        fail("The obsolete browser client host must not be presented on the landing page.", errors)
+
+    for required_privacy_term in ("PeerJS", "WebRTC", "GitHub Pages"):
+        if required_privacy_term not in privacy_html:
+            fail(
+                f"The public privacy policy must describe online multiplayer dependency: {required_privacy_term}",
+                errors,
+            )
+
+    if "1 lipca 2026" in privacy_html:
+        fail("The public privacy policy still contains the pre-online update date.", errors)
 
     if errors:
         for error in errors:
