@@ -112,9 +112,10 @@ Aplikacja może korzystać z następujących uprawnień Androida:
 
 - `INTERNET` - do komunikacji multiplayer lokalnej i online oraz, zależnie od wariantu, reklam i konfiguracji reklam,
 - `ACCESS_NETWORK_STATE` - do sprawdzenia stanu połączenia sieciowego,
+- `CHANGE_NETWORK_STATE` - jako warunek systemowy dla foreground service utrzymującego połączenie sieciowe z innymi urządzeniami,
 - `CAMERA` - do opcjonalnego skanowania kodu QR pokoju,
 - `POST_NOTIFICATIONS` - do pokazania powiadomienia aktywnej gry na Androidzie 13 i nowszych,
-- `FOREGROUND_SERVICE` oraz `FOREGROUND_SERVICE_DATA_SYNC` - do utrzymania aktywnej gry multiplayer podczas działania aplikacji w tle.
+- `FOREGROUND_SERVICE` oraz `FOREGROUND_SERVICE_CONNECTED_DEVICE` - do utrzymania aktywnej sesji multiplayer wymagającej ciągłego połączenia z innymi urządzeniami.
 
 ## 9. Jak długo przechowujemy dane
 
