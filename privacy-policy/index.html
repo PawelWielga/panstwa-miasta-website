@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Polityka prywatności - Państwa Miasta</title>
-  <meta name="description" content="Polityka prywatności aplikacji Państwa Miasta.">
+  <meta name="description" content="Polityka prywatności aplikacji Państwa Miasta, w tym multiplayera lokalnego i online.">
   <style>
     :root {
       color-scheme: light dark;
@@ -109,8 +109,8 @@
   <main>
     <article>
       <h1>Polityka prywatności aplikacji Państwa Miasta</h1>
-      <p class="meta">Data ostatniej aktualizacji: 1 lipca 2026 r.</p>
-      <p class="lead">Ta polityka prywatności opisuje, jakie dane mogą być przetwarzane podczas korzystania z aplikacji <strong>Państwa Miasta</strong> oraz w jakim celu są używane.</p>
+      <p class="meta">Data ostatniej aktualizacji: 23 sierpnia 2026 r.</p>
+      <p class="lead">Ta polityka opisuje dane przetwarzane podczas korzystania z aplikacji <strong>Państwa Miasta</strong>, lokalnego multiplayera oraz trybu online dostępnego od wersji 1.2.0.</p>
 
       <ul>
         <li>Aplikacja: <strong>Państwa Miasta</strong></li>
@@ -120,74 +120,85 @@
       </ul>
 
       <h2>1. Jak działa aplikacja</h2>
-      <p><strong>Państwa Miasta</strong> to gra słowna na Androida. Podstawowa rozgrywka multiplayer działa lokalnie, w tej samej sieci Wi-Fi albo przez hotspot. Aplikacja nie wymaga konta użytkownika, logowania ani rejestracji.</p>
-      <p>Aplikacja nie posiada własnego systemu kont i nie wysyła danych rozgrywki na backend gry. Dane potrzebne do gry są przetwarzane lokalnie na urządzeniu oraz, w trybie multiplayer, przesyłane między urządzeniami uczestników znajdujących się w tym samym pokoju gry.</p>
-      <p>Aplikacja może korzystać z internetu do wyświetlania reklam, obsługi zgód reklamowych oraz pobrania zdalnej konfiguracji reklam, jeśli reklamy są włączone w danym buildzie.</p>
+      <p><strong>Państwa Miasta</strong> to gra słowna z hostem działającym na Androidzie. Gra może działać lokalnie w tej samej sieci Wi-Fi lub przez hotspot. Od wersji 1.2.0 host może również udostępnić pokój online, a pozostali gracze mogą dołączyć przez zgodny klient WWW.</p>
+      <p>Aplikacja nie wymaga konta użytkownika, logowania ani rejestracji. Nie utrzymujemy własnego backendu przechowującego stan rozgrywki ani bazy aktywnych pokojów. Aplikacja Android hosta pozostaje źródłem prawdy dla stanu gry, rund, odpowiedzi, ocen i punktacji.</p>
+      <p>W trybie online publiczna usługa PeerJS służy do sygnalizacji potrzebnej do zestawienia połączenia WebRTC. Po zestawieniu połączenia dane gry są przesyłane bezpośrednio między uczestnikami przez WebRTC DataChannel. Projekt nie używa własnego serwera TURN.</p>
+      <p>Aplikacja może dodatkowo korzystać z internetu do wyświetlania reklam, obsługi zgód reklamowych oraz pobrania zdalnej konfiguracji reklam, jeśli reklamy są włączone w danym buildzie.</p>
 
       <h2>2. Jakie dane mogą być przetwarzane</h2>
       <p>Aplikacja może przetwarzać następujące dane:</p>
 
       <h3>Dane podane przez użytkownika</h3>
       <ul>
-        <li>nazwa gracza albo pseudonim wpisany w aplikacji,</li>
+        <li>nazwa gracza albo pseudonim wpisany w aplikacji lub kliencie WWW,</li>
         <li>odpowiedzi wpisywane w trakcie rundy,</li>
-        <li>decyzje dotyczące oceny odpowiedzi innych graczy,</li>
-        <li>ustawienia aplikacji, na przykład preferencje gry lub dźwięku.</li>
+        <li>decyzje i oceny związane z odpowiedziami,</li>
+        <li>ustawienia aplikacji oraz rozgrywki.</li>
       </ul>
       <p>Nie wymagamy podawania imienia i nazwiska, adresu e-mail, numeru telefonu ani innych danych kontaktowych.</p>
 
       <h3>Dane lokalnej rozgrywki multiplayer</h3>
       <p>Podczas gry w sieci lokalnej aplikacja może przetwarzać i przesyłać między urządzeniami uczestników:</p>
       <ul>
-        <li>nazwę gracza,</li>
-        <li>identyfikator gracza używany w bieżącej sesji,</li>
-        <li>kod pokoju,</li>
-        <li>identyfikator pokoju,</li>
+        <li>nazwę i identyfikator gracza używany przez grę,</li>
+        <li>kod i identyfikator pokoju,</li>
         <li>adres IP i port hosta potrzebne do połączenia lokalnego,</li>
-        <li>stan gry, kategorię, literę, odpowiedzi, oceny i wyniki,</li>
-        <li>informacje techniczne potrzebne do utrzymania połączenia, takie jak heartbeat i status połączenia.</li>
+        <li>stan gry, kategorie, literę, odpowiedzi, oceny, statystyki i wyniki,</li>
+        <li>informacje techniczne potrzebne do utrzymania połączenia, takie jak heartbeat, identyfikatory żądań i status połączenia.</li>
       </ul>
-      <p>Te dane są używane po to, aby uczestnicy mogli dołączyć do tej samej gry, widzieć wspólny stan rozgrywki i kontynuować grę po chwilowej utracie połączenia.</p>
+
+      <h3>Dane rozgrywki online i WebRTC</h3>
+      <p>W trybie online mogą być przetwarzane dane potrzebne do odnalezienia hosta, uwierzytelnienia sesji i zestawienia bezpośredniego połączenia:</p>
+      <ul>
+        <li>sześci znakowy kod pokoju i wyprowadzone z niego techniczne identyfikatory sesji PeerJS,</li>
+        <li>identyfikatory połączeń i dane sygnalizacyjne PeerJS,</li>
+        <li>informacje ICE i sieciowe wymagane przez WebRTC, które zgodnie z działaniem tej technologii mogą obejmować adresy IP lub inne dane potrzebne do zestawienia połączenia,</li>
+        <li>nazwę i identyfikator gracza, dane reconnectu aktywnej sesji oraz dane rozgrywki wymienione wyżej.</li>
+      </ul>
+      <p>Publiczna usługa PeerJS uczestniczy w sygnalizacji połączenia. Dane samej rozgrywki po zestawieniu bezpośredniego DataChannel nie są przekazywane przez własny backend gry. Informacje o działaniu PeerJS Cloud są dostępne w <a href="https://peerjs.com/server/cloud">dokumentacji PeerJS</a>.</p>
 
       <h3>Dane zapisane na urządzeniu</h3>
-      <p>Aplikacja może zapisywać lokalnie na urządzeniu dane potrzebne do działania gry, na przykład nazwę gracza, ustawienia oraz dane aktywnej lub ostatniej sesji. Dane te pozostają na urządzeniu użytkownika i mogą zostać usunięte przez wyczyszczenie danych aplikacji albo odinstalowanie aplikacji.</p>
+      <p>Aplikacja może zapisywać lokalnie nazwę gracza, ustawienia, dane aktywnej lub ostatniej sesji, dane potrzebne do reconnectu oraz lokalny draft odpowiedzi. Dane te służą do działania aplikacji i wznowienia niedokończonej gry.</p>
+
+      <h3>Dane klienta WWW i hostingu GitHub Pages</h3>
+      <p>Produkcyjny klient WWW jest statyczną stroną hostowaną przez GitHub Pages. Podczas otwierania strony dostawca hostingu może przetwarzać standardowe dane techniczne żądania internetowego zgodnie ze swoimi zasadami, na przykład adres IP, informacje o przeglądarce, czas żądania i informacje potrzebne do zapewnienia bezpieczeństwa oraz działania usługi. Aktualne zasady GitHub są dostępne w <a href="https://docs.github.com/en/site-policy/privacy-policies">centrum polityk prywatności GitHub</a>.</p>
 
       <h3>Dane techniczne urządzenia i reklam</h3>
       <p>Jeżeli reklamy są włączone, aplikacja korzysta z Google Mobile Ads SDK / Google AdMob. W takim przypadku Google i jego partnerzy reklamowi mogą przetwarzać dane techniczne urządzenia i użycia aplikacji, na przykład identyfikator reklamowy urządzenia, adres IP, przybliżoną lokalizację wynikającą z adresu IP, informacje o urządzeniu, informacje o aplikacji oraz interakcje z reklamami.</p>
-      <p>Zakres danych przetwarzanych przez Google zależy od konfiguracji reklam, regionu użytkownika, ustawień prywatności oraz zgód wyrażonych przez użytkownika. Więcej informacji znajduje się w politykach Google:</p>
+      <p>Zakres danych przetwarzanych przez Google zależy od konfiguracji reklam, regionu użytkownika, ustawień prywatności oraz zgód. Więcej informacji:</p>
       <ul>
-        <li><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
-        <li><a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></li>
+        <li><a href="https://policies.google.com/privacy">Polityka prywatności Google</a></li>
+        <li><a href="https://policies.google.com/technologies/ads">Technologie reklamowe Google</a></li>
       </ul>
 
       <h2>3. Kamera i skanowanie kodów QR</h2>
       <p>Aplikacja może poprosić o dostęp do aparatu, gdy użytkownik wybierze dołączanie do pokoju przez zeskanowanie kodu QR.</p>
-      <p>Kamera jest używana wyłącznie do odczytania kodu QR z danymi pokoju gry, takimi jak adres hosta, port i kod pokoju. Aplikacja nie zapisuje zdjęć ani nagrań z aparatu i nie wysyła obrazu z kamery do wydawcy aplikacji.</p>
-      <p>Skanowanie QR jest opcjonalne. Użytkownik może dołączyć do gry ręcznie, wpisując dane pokoju.</p>
+      <p>Kod QR może zawierać dane potrzebne do dołączenia do pokoju lokalnego lub online. Aplikacja nie zapisuje zdjęć ani nagrań z aparatu i nie wysyła obrazu z kamery do wydawcy aplikacji.</p>
+      <p>Skanowanie QR jest opcjonalne. Użytkownik może skorzystać z innych dostępnych metod dołączenia.</p>
 
       <h2>4. Powiadomienia i działanie gry w tle</h2>
-      <p>Podczas aktywnej gry multiplayer aplikacja może uruchomić usługę działającą w tle jako Android Foreground Service. Służy ona do utrzymania lokalnego pokoju gry i połączenia między urządzeniami, gdy aplikacja zostanie zminimalizowana.</p>
-      <p>W takim przypadku system Android pokazuje stałe powiadomienie dotyczące aktywnej gry. Powiadomienie może zawierać podstawowe informacje o pokoju, hoście, liczbie graczy lub statusie rozgrywki.</p>
-      <p>Usługa działa tylko podczas aktywnej sesji gry i jest zatrzymywana po opuszczeniu pokoju albo zakończeniu aktywnej sesji.</p>
+      <p>Podczas aktywnej gry multiplayer aplikacja Android może uruchomić Foreground Service, aby utrzymać aktywną sesję po zminimalizowaniu aplikacji.</p>
+      <p>System Android pokazuje wtedy stałe powiadomienie dotyczące aktywnej gry. Powiadomienie może zawierać podstawowe informacje o pokoju, hoście, liczbie graczy lub statusie rozgrywki.</p>
+      <p>Usługa działa tylko podczas aktywnej sesji gry i jest zatrzymywana po opuszczeniu pokoju albo zakończeniu sesji.</p>
 
       <h2>5. Reklamy i zgody użytkownika</h2>
       <p>Aplikacja może wyświetlać reklamy Google AdMob. Reklamy mogą być personalizowane albo niepersonalizowane, zależnie od regionu, konfiguracji oraz zgód użytkownika.</p>
-      <p>Aplikacja może używać Google User Messaging Platform, aby wyświetlić formularz zgody lub opcje prywatności wymagane dla reklam. Użytkownik może zobaczyć komunikat dotyczący prywatności przed załadowaniem reklam albo w innym momencie wymaganym przez konfigurację Google.</p>
-      <p>Jeżeli użytkownik nie wyrazi wymaganej zgody albo zgoda nie jest dostępna, aplikacja może nie ładować reklam lub wyświetlać reklamy w ograniczonym zakresie, zależnie od konfiguracji Google i aplikacji.</p>
+      <p>Aplikacja może używać Google User Messaging Platform, aby wyświetlić formularz zgody lub opcje prywatności wymagane dla reklam. Jeżeli wymagane warunki nie są spełnione, aplikacja może nie ładować reklam lub wyświetlać je w ograniczonym zakresie zgodnie z konfiguracją Google i aplikacji.</p>
 
       <h2>6. Zdalna konfiguracja reklam</h2>
       <p>Aplikacja może pobrać z publicznego adresu HTTPS konfigurację reklam, na przykład informację, czy reklamy są włączone oraz jaki identyfikator jednostki reklamowej ma zostać użyty.</p>
-      <p>Taka konfiguracja nie wymaga konta użytkownika. Podczas pobierania konfiguracji serwer obsługujący ten adres może otrzymać standardowe dane techniczne połączenia, takie jak adres IP, czas żądania i informacje o kliencie HTTP. Dane te mogą pojawić się w logach technicznych serwera zgodnie z konfiguracją hostingu używanego przez wydawcę.</p>
+      <p>Podczas pobierania konfiguracji serwer obsługujący ten adres może otrzymać standardowe dane techniczne połączenia, takie jak adres IP, czas żądania i informacje o kliencie HTTP, zgodnie z konfiguracją użytego hostingu.</p>
 
       <h2>7. Komu mogą być udostępniane dane</h2>
-      <p>Dane rozgrywki multiplayer są udostępniane uczestnikom tego samego pokoju gry w lokalnej sieci. Przykładowo inni gracze mogą widzieć nazwę gracza, odpowiedzi, oceny i wyniki.</p>
-      <p>Dane techniczne i reklamowe mogą być przetwarzane przez Google i jego partnerów reklamowych, jeżeli reklamy są włączone. Szczegóły opisują polityki Google wskazane wyżej.</p>
+      <p>Dane rozgrywki są udostępniane uczestnikom tego samego pokoju w zakresie potrzebnym do wspólnej gry. Inni gracze mogą widzieć między innymi nazwę gracza, odpowiedzi, oceny i wyniki.</p>
+      <p>W trybie online techniczne dane sygnalizacyjne i połączeniowe są przetwarzane z udziałem publicznej usługi PeerJS oraz infrastruktury sieciowej potrzebnej do zestawienia WebRTC. Klient WWW jest dostarczany przez GitHub Pages.</p>
+      <p>Dane techniczne i reklamowe mogą być przetwarzane przez Google i jego partnerów reklamowych, jeżeli reklamy są włączone.</p>
       <p>Nie sprzedajemy danych osobowych użytkowników.</p>
 
       <h2>8. Uprawnienia Androida używane przez aplikację</h2>
       <p>Aplikacja może korzystać z następujących uprawnień Androida:</p>
       <ul>
-        <li><code>INTERNET</code> - do komunikacji sieciowej, w tym połączeń lokalnych multiplayer, reklam oraz pobrania konfiguracji reklam,</li>
+        <li><code>INTERNET</code> - do komunikacji multiplayer lokalnej i online oraz, zależnie od wariantu, reklam i konfiguracji reklam,</li>
         <li><code>ACCESS_NETWORK_STATE</code> - do sprawdzenia stanu połączenia sieciowego,</li>
         <li><code>CAMERA</code> - do opcjonalnego skanowania kodu QR pokoju,</li>
         <li><code>POST_NOTIFICATIONS</code> - do pokazania powiadomienia aktywnej gry na Androidzie 13 i nowszych,</li>
@@ -196,17 +207,17 @@
 
       <h2>9. Jak długo przechowujemy dane</h2>
       <p>Dane zapisane lokalnie w aplikacji są przechowywane tak długo, jak jest to potrzebne do działania aplikacji albo do czasu ich usunięcia przez użytkownika, na przykład przez wyczyszczenie danych aplikacji lub odinstalowanie aplikacji.</p>
-      <p>Dane aktywnej gry są używane w czasie trwania sesji. Po opuszczeniu pokoju albo zakończeniu gry aplikacja nie potrzebuje ich do dalszego działania, z wyjątkiem danych, które mogą zostać zapisane lokalnie jako ustawienia lub dane ułatwiające ponowne połączenie z aktywną sesją.</p>
-      <p>Dane przetwarzane przez Google w ramach reklam są przechowywane zgodnie z politykami i ustawieniami Google.</p>
+      <p>Dane aktywnej gry są używane podczas sesji. Część minimalnych danych potrzebnych do reconnectu lub wznowienia niedokończonej sesji może pozostać lokalnie po restarcie procesu aplikacji.</p>
+      <p>Retencja danych przetwarzanych przez PeerJS Cloud, GitHub Pages, Google Mobile Ads oraz inne usługi zewnętrzne podlega zasadom tych usług.</p>
 
       <h2>10. Bezpieczeństwo</h2>
-      <p>Aplikacja ogranicza przetwarzanie danych do funkcji potrzebnych do gry, lokalnej komunikacji multiplayer, reklam i podstawowej konfiguracji. Dane lokalnej rozgrywki są przesyłane między urządzeniami w tej samej sieci lokalnej.</p>
-      <p>Połączenia w lokalnej sieci LAN/hotspot mogą nie korzystać z szyfrowania TLS, ponieważ służą bezpośredniej komunikacji między urządzeniami graczy w tej samej sieci. Nie należy używać gry w niezaufanych sieciach, jeśli użytkownik nie chce ujawniać nazwy gracza, odpowiedzi lub danych pokoju innym osobom mającym dostęp do tej sieci.</p>
-      <p>Połączenia do zdalnej konfiguracji reklam powinny używać HTTPS.</p>
+      <p>W trybie LAN/hotspot komunikacja może korzystać z lokalnego cleartext WebSocket bez TLS. Z tego powodu nie należy używać lokalnej gry w niezaufanej sieci, jeśli użytkownik nie chce ujawniać danych pokoju lub rozgrywki osobom mającym dostęp do tej sieci.</p>
+      <p>Połączenia WebRTC używane w trybie online są szyfrowane przez mechanizmy transportowe WebRTC. Sygnalizacja potrzebna do zestawienia połączenia odbywa się przez publiczną usługę PeerJS. Projekt używa bezpośredniego P2P i nie utrzymuje własnego serwera TURN.</p>
+      <p>Połączenia do klienta WWW i zdalnej konfiguracji używają HTTPS.</p>
 
       <h2>11. Dzieci i rodziny</h2>
-      <p>Aplikacja jest prostą grą słowną, która może być używana przez graczy w różnym wieku. Nie prosimy użytkowników o podawanie danych kontaktowych ani danych identyfikujących.</p>
-      <p>Jeżeli aplikacja jest publikowana jako skierowana do dzieci lub rodzin, wydawca powinien skonfigurować Google Play Console, AdMob oraz reklamy zgodnie z faktyczną grupą odbiorców i obowiązującymi wymaganiami Google Play.</p>
+      <p>Aplikacja jest prostą grą słowną, która może być używana przez graczy w różnym wieku. Nie prosimy użytkowników o podawanie danych kontaktowych ani o zakładanie konta.</p>
+      <p>Konfiguracja Google Play, grupy odbiorców oraz reklam musi odpowiadać faktycznemu wariantowi opublikowanej aplikacji i obowiązującym wymaganiom Google Play.</p>
       <p>Rodzic lub opiekun może skontaktować się z wydawcą przez dane kontaktowe podane w tej polityce, jeśli uważa, że dziecko przekazało dane, które powinny zostać usunięte.</p>
 
       <h2>12. Prawa użytkownika</h2>
@@ -215,7 +226,7 @@
       <p>Dane zapisane lokalnie w aplikacji można usunąć przez wyczyszczenie danych aplikacji w ustawieniach Androida albo przez odinstalowanie aplikacji.</p>
 
       <h2>13. Zmiany polityki prywatności</h2>
-      <p>Polityka prywatności może być aktualizowana, gdy zmieni się działanie aplikacji, zakres przetwarzanych danych, konfiguracja reklam albo wymagania prawne. Aktualna wersja polityki powinna być dostępna publicznie pod linkiem podanym w Google Play Console.</p>
+      <p>Polityka prywatności może być aktualizowana, gdy zmieni się działanie aplikacji, multiplayer, zakres przetwarzanych danych, dostawcy usług, konfiguracja reklam albo wymagania prawne. Aktualna wersja polityki pozostaje dostępna pod tym samym publicznym adresem używanym w Google Play Console.</p>
     </article>
   </main>
 </body>
