@@ -25,6 +25,10 @@ REQUIRED_FILES = (
     "assets/logo-mark.svg",
     "assets/favicon.svg",
     "assets/og-image.svg",
+    "assets/screenshots/screens-1.webp",
+    "assets/screenshots/screens-2.webp",
+    "assets/screenshots/screens-3.webp",
+    "assets/screenshots/screens-4.webp",
 )
 
 REQUIRED_META_NAMES = {"description", "viewport", "twitter:card"}
@@ -177,6 +181,14 @@ def main() -> int:
     ):
         if variable not in tokens:
             fail(f"Missing shared token in design-tokens.css: {variable}", errors)
+
+    if "Schematyczne makiety" in html:
+        fail("The landing page still labels game views as schematic mockups.", errors)
+    if "Aktualne zrzuty ekranu" not in html:
+        fail("The landing page must identify the current Android screenshots.", errors)
+    for screenshot_class in range(8):
+        if f"game-screenshot--{screenshot_class}" not in html:
+            fail(f"Missing current game screenshot slot: {screenshot_class}", errors)
 
     if "play.google.com" in html:
         fail("Google Play must not be linked before a real store URL is available.", errors)
