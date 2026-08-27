@@ -14,7 +14,7 @@ https://pawelwielga.github.io/panstwa-miasta-website/
 - lokalną rozgrywkę przez Wi-Fi lub hotspot,
 - przygotowany do wydania 1.2.0 tryb online z hostem Android i klientem WWW,
 - proces tworzenia pokoju, rundy, oceniania i wyników,
-- schematyczne makiety aktualnego UI aplikacji,
+- aktualne zrzuty ekranu z interfejsu aplikacji Android 1.2.0,
 - FAQ, metadane SEO, Open Graph, favicon, `robots.txt` i `sitemap.xml`,
 - publiczną politykę prywatności pod niezmiennym adresem `/privacy-policy/`.
 
@@ -42,6 +42,7 @@ Strona jest lekka i statyczna:
 .
 ├── .github/workflows/validate-site.yml
 ├── assets/
+│   ├── screenshots/
 │   ├── favicon.svg
 │   ├── logo-mark.svg
 │   └── og-image.svg
@@ -134,5 +135,4 @@ Polityka opisuje zarówno LAN/hotspot, jak i tryb online 1.2.0: publiczną sygna
 Po udostępnieniu wersji sklepowej należy:
 
 1. podmienić nieaktywne CTA na prawdziwy link Google Play,
-2. potwierdzić informację o cenie w FAQ,
-3. zastąpić schematyczne makiety prawdziwymi screenshotami z aktualnej wersji aplikacji.
+2. potwierdzić informację o cenie w FAQ.

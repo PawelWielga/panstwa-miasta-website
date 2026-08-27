@@ -4,3 +4,80 @@
   top: 0;
   transform: translate(-50%, -8px);
 }
+
+.phone--screenshot {
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.22);
+}
+
+.phone--hero.phone--screenshot,
+.phone--small.phone--screenshot {
+  aspect-ratio: 691 / 1536;
+}
+
+.phone--hero.phone--screenshot {
+  border-radius: 28px;
+}
+
+.phone--small.phone--screenshot {
+  border-radius: 22px;
+}
+
+.phone--screenshot .phone-screen,
+.phone-screen--screenshot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border-radius: inherit;
+  background: var(--background);
+}
+
+.game-screenshot {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+}
+
+.game-screenshot--0,
+.game-screenshot--1 { background-image: url("assets/screenshots/screens-1.webp"); }
+.game-screenshot--2,
+.game-screenshot--3 { background-image: url("assets/screenshots/screens-2.webp"); }
+.game-screenshot--4,
+.game-screenshot--5 { background-image: url("assets/screenshots/screens-3.webp"); }
+.game-screenshot--6,
+.game-screenshot--7 { background-image: url("assets/screenshots/screens-4.webp"); }
+
+.game-screenshot--0,
+.game-screenshot--2,
+.game-screenshot--4,
+.game-screenshot--6 { background-position: left top; }
+.game-screenshot--1,
+.game-screenshot--3,
+.game-screenshot--5,
+.game-screenshot--7 { background-position: right top; }
+
+.screen-card--screenshot {
+  align-content: start;
+}
+
+@media (max-width: 519px) {
+  .screens-grid {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(270px, 86vw);
+    grid-template-columns: none;
+    overflow-x: auto;
+    padding: 4px 4px 18px;
+    margin-inline: -4px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .screen-card--screenshot {
+    scroll-snap-align: center;
+  }
+}
+
