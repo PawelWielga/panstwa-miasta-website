@@ -11,20 +11,27 @@ https://pawelwielga.github.io/panstwa-miasta-website/
 ## Co zawiera strona
 
 - opis gry i potwierdzonych funkcji aplikacji na Androida,
+- otwartą wersję beta dostępną w Google Play,
 - lokalną rozgrywkę przez Wi-Fi lub hotspot,
-- przygotowany do wydania 1.2.0 tryb online z hostem Android i klientem WWW,
+- tryb online 1.2.0 z hostem Android i klientem WWW,
 - proces tworzenia pokoju, rundy, oceniania i wyników,
 - aktualne zrzuty ekranu z interfejsu aplikacji Android 1.2.0,
 - FAQ, metadane SEO, Open Graph, favicon, `robots.txt` i `sitemap.xml`,
 - publiczną politykę prywatności pod niezmiennym adresem `/privacy-policy/`.
 
-Przycisk Google Play pozostaje nieaktywny i jest oznaczony jako „Wkrótce”, dopóki nie będzie dostępny prawdziwy adres karty aplikacji. Produkcyjny klient WWW jest już wdrożony pod adresem:
+Otwarta beta aplikacji na Androida jest dostępna w Google Play:
+
+```text
+https://play.google.com/store/apps/details?id=app.dihor.panstwamiasta
+```
+
+Produkcyjny klient WWW jest wdrożony pod adresem:
 
 ```text
 https://pawelwielga.github.io/panstwa-miasta-play/
 ```
 
-Landing opisuje online jako funkcję wydania Android 1.2.0, żeby nie sugerować, że nieopublikowana jeszcze wersja Androida jest już dostępna w Google Play.
+Landing jasno oznacza wersję sklepową jako otwartą betę i nie przedstawia jej jako stabilnego wydania produkcyjnego.
 
 ## Technologia
 
@@ -90,7 +97,8 @@ Walidator bez zewnętrznych zależności sprawdza między innymi:
 - poprawność linków lokalnych i kotwic,
 - stały adres polityki prywatności,
 - standardowy adres projektu GitHub Pages,
-- brak przedwczesnego aktywnego linku Google Play,
+- obecność dokładnego adresu otwartej bety w Google Play,
+- brak nieaktualnych komunikatów „Wkrótce w Google Play”,
 - obecność właściwego produkcyjnego adresu klienta WWW,
 - brak starego, niewdrożonego adresu klienta,
 - opis PeerJS/WebRTC i GitHub Pages w publicznej polityce prywatności.
@@ -129,10 +137,3 @@ Polityka opisuje zarówno LAN/hotspot, jak i tryb online 1.2.0: publiczną sygna
 
 - [`PawelWielga/panstwa-miasta`](https://github.com/PawelWielga/panstwa-miasta) — aplikacja Android, host i źródło prawdy dla gry.
 - [`PawelWielga/panstwa-miasta-play`](https://github.com/PawelWielga/panstwa-miasta-play) — produkcyjny klient WWW dołączający do hosta Android.
-
-## Materiały do uzupełnienia przy publikacji Androida
-
-Po udostępnieniu wersji sklepowej należy:
-
-1. podmienić nieaktywne CTA na prawdziwy link Google Play,
-2. potwierdzić informację o cenie w FAQ.
