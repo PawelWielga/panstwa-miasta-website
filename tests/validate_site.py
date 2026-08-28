@@ -38,6 +38,7 @@ REQUIRED_META_PROPERTIES = {
     "og:url",
     "og:image",
 }
+GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=app.dihor.panstwamiasta"
 PRODUCTION_WEB_CLIENT_URL = "https://pawelwielga.github.io/panstwa-miasta-play/"
 OBSOLETE_WEB_CLIENT_HOST = "play.panstwamiasta.dihor.pl"
 
@@ -190,8 +191,18 @@ def main() -> int:
         if f"game-screenshot--{screenshot_class}" not in html:
             fail(f"Missing current game screenshot slot: {screenshot_class}", errors)
 
-    if "play.google.com" in html:
-        fail("Google Play must not be linked before a real store URL is available.", errors)
+    if GOOGLE_PLAY_URL not in html:
+        fail("The landing page must expose the public Google Play beta URL.", errors)
+    if "Wkrótce w Google Play" in html:
+        fail("The landing page still claims the Google Play release is coming soon.", errors)
+    if "Otwarta beta" not in html:
+        fail("The landing page must clearly label the Google Play release as an open beta.", errors)
+    for obsolete_store_text in (
+        "Aplikacja nie ma jeszcze publicznej karty Google Play",
+        "Aplikacja na Androida pojawi się w Google Play",
+    ):
+        if obsolete_store_text in html:
+            fail(f"Obsolete Google Play availability text remains: {obsolete_store_text}", errors)
 
     if PRODUCTION_WEB_CLIENT_URL not in html:
         fail("The production browser client URL must be exposed on the landing page.", errors)
