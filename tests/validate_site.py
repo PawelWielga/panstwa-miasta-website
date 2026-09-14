@@ -192,12 +192,13 @@ def main() -> int:
             fail(f"Missing current game screenshot slot: {screenshot_class}", errors)
 
     if GOOGLE_PLAY_URL not in html:
-        fail("The landing page must expose the public Google Play beta URL.", errors)
-    if "Wkrótce w Google Play" in html:
-        fail("The landing page still claims the Google Play release is coming soon.", errors)
-    if "Otwarta beta" not in html:
-        fail("The landing page must clearly label the Google Play release as an open beta.", errors)
+        fail("The landing page must expose the public Google Play URL.", errors)
+    if "Pełna wersja dostępna w Google Play" not in html:
+        fail("The landing page must clearly state that the full release is available in Google Play.", errors)
+    if "beta" in html.lower():
+        fail("The landing page still contains obsolete beta-release wording.", errors)
     for obsolete_store_text in (
+        "Wkrótce w Google Play",
         "Aplikacja nie ma jeszcze publicznej karty Google Play",
         "Aplikacja na Androida pojawi się w Google Play",
     ):
