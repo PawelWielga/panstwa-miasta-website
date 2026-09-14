@@ -13,6 +13,20 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
 PRIVACY = ROOT / "privacy-policy" / "index.html"
 
+SCREENSHOTS_123 = (
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-48-37-806_app.dihor.panstwamiasta.jpg",
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-49-20-690_app.dihor.panstwamiasta.jpg",
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-49-27-254_app.dihor.panstwamiasta.jpg",
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-50-54-017_app.dihor.panstwamiasta.jpg",
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-50-58-017_app.dihor.panstwamiasta.jpg",
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-51-16-195_app.dihor.panstwamiasta.jpg",
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-54-09-363_app.dihor.panstwamiasta.jpg",
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-56-08-355_app.dihor.panstwamiasta.jpg",
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-56-16-187_app.dihor.panstwamiasta.jpg",
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-56-25-536_app.dihor.panstwamiasta.jpg",
+    "assets/screenshots/1.2.3/Screenshot_2026-09-14-22-58-09-696_app.dihor.panstwamiasta.jpg",
+)
+
 REQUIRED_FILES = (
     "index.html",
     "styles.css",
@@ -25,10 +39,7 @@ REQUIRED_FILES = (
     "assets/logo-mark.svg",
     "assets/favicon.svg",
     "assets/og-image.svg",
-    "assets/screenshots/screens-1.webp",
-    "assets/screenshots/screens-2.webp",
-    "assets/screenshots/screens-3.webp",
-    "assets/screenshots/screens-4.webp",
+    *SCREENSHOTS_123,
 )
 
 REQUIRED_META_NAMES = {"description", "viewport", "twitter:card"}
@@ -187,9 +198,12 @@ def main() -> int:
         fail("The landing page still labels game views as schematic mockups.", errors)
     if "Aktualne zrzuty ekranu" not in html:
         fail("The landing page must identify the current Android screenshots.", errors)
-    for screenshot_class in range(8):
+    for screenshot_class in range(len(SCREENSHOTS_123)):
         if f"game-screenshot--{screenshot_class}" not in html:
             fail(f"Missing current game screenshot slot: {screenshot_class}", errors)
+    for screenshot_path in SCREENSHOTS_123:
+        if screenshot_path not in html:
+            fail(f"The landing page does not use current screenshot: {screenshot_path}", errors)
 
     if GOOGLE_PLAY_URL not in html:
         fail("The landing page must expose the public Google Play URL.", errors)
