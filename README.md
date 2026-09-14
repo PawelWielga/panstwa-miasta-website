@@ -11,15 +11,15 @@ https://pawelwielga.github.io/panstwa-miasta-website/
 ## Co zawiera strona
 
 - opis gry i potwierdzonych funkcji aplikacji na Androida,
-- otwartą wersję beta dostępną w Google Play,
+- pełną wersję aplikacji dostępną w Google Play,
 - lokalną rozgrywkę przez Wi-Fi lub hotspot,
-- tryb online 1.2.0 z hostem Android i klientem WWW,
+- tryb online z hostem Android i klientem WWW,
 - proces tworzenia pokoju, rundy, oceniania i wyników,
-- aktualne zrzuty ekranu z interfejsu aplikacji Android 1.2.0,
+- aktualne zrzuty ekranu z interfejsu aplikacji Android,
 - FAQ, metadane SEO, Open Graph, favicon, `robots.txt` i `sitemap.xml`,
 - publiczną politykę prywatności pod niezmiennym adresem `/privacy-policy/`.
 
-Otwarta beta aplikacji na Androida jest dostępna w Google Play:
+Pełna wersja aplikacji na Androida jest dostępna w Google Play:
 
 ```text
 https://play.google.com/store/apps/details?id=app.dihor.panstwamiasta
@@ -31,7 +31,7 @@ Produkcyjny klient WWW jest wdrożony pod adresem:
 https://pawelwielga.github.io/panstwa-miasta-play/
 ```
 
-Landing jasno oznacza wersję sklepową jako otwartą betę i nie przedstawia jej jako stabilnego wydania produkcyjnego.
+Landing przedstawia wersję sklepową jako pełne wydanie dostępne publicznie i nie używa już komunikacji z etapu otwartej bety.
 
 ## Technologia
 
@@ -97,8 +97,8 @@ Walidator bez zewnętrznych zależności sprawdza między innymi:
 - poprawność linków lokalnych i kotwic,
 - stały adres polityki prywatności,
 - standardowy adres projektu GitHub Pages,
-- obecność dokładnego adresu otwartej bety w Google Play,
-- brak nieaktualnych komunikatów „Wkrótce w Google Play”,
+- obecność dokładnego adresu aplikacji w Google Play,
+- brak nieaktualnych komunikatów o becie lub „Wkrótce w Google Play”,
 - obecność właściwego produkcyjnego adresu klienta WWW,
 - brak starego, niewdrożonego adresu klienta,
 - opis PeerJS/WebRTC i GitHub Pages w publicznej polityce prywatności.
@@ -131,7 +131,7 @@ https://pawelwielga.github.io/panstwa-miasta-website/privacy-policy/
 
 Plik `privacy-policy/index.html` jest wersją używaną publicznie. Nie należy usuwać ani przenosić tej ścieżki bez równoczesnej aktualizacji Google Play Console.
 
-Polityka opisuje zarówno LAN/hotspot, jak i tryb online 1.2.0: publiczną sygnalizację PeerJS, bezpośredni WebRTC DataChannel, brak własnego TURN, hosting klienta WWW na GitHub Pages oraz zależny od wariantu release zakres reklam Google AdMob.
+Polityka opisuje zarówno LAN/hotspot, jak i tryb online: publiczną sygnalizację PeerJS, bezpośredni WebRTC DataChannel, brak własnego TURN, hosting klienta WWW na GitHub Pages oraz zależny od wariantu release zakres reklam Google AdMob.
 
 ## Powiązane repozytoria
 
